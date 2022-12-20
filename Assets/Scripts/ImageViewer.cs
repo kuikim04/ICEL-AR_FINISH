@@ -4,12 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ImageViewer : MonoBehaviour
 {
+    public MeasureDepth mMeasureDepth;
     public MultiSourceManager mMultiSource;
     public RawImage mRawImage;
+    public RawImage mRawDepth;
     // Update is called once per frame
     void Update()
     {
         mRawImage.texture = mMultiSource.GetColorTexture();
+
+        // to do addthing
+      mRawDepth.texture = mMeasureDepth.mDepthTexture;
     }
 }
 
