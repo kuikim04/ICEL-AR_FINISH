@@ -57,6 +57,7 @@ public class MeasureDepth : MonoBehaviour
     {
         mValidPoints = DepthToColor();
         mTriggerPoint = FilterToTrigger(mValidPoints);
+
         if(OnTriggerPoints != null && mTriggerPoint.Count != 0)      
             OnTriggerPoints(mTriggerPoint);
         
