@@ -12,13 +12,18 @@ namespace Script
         public TextMeshProUGUI textNameMap;
         public GameObject uiPlayer;
         public GameObject startPanel;
+        public GameObject uiTrigger;
 
         [Header("Game Play")]
         public GameObject dialogue;
         public static bool isPause;
+        public TextMeshProUGUI scoreText;
+        private int score;
+        [HideInInspector] public static int scoreNum;
         // Start is called before the first frame update
         void Start()
         {
+            scoreNum = 0;
         
             startPanel.SetActive(true);
            // Map[Map.Length].SetActive(false);
@@ -27,7 +32,9 @@ namespace Script
         // Update is called once per frame
         void Update()
         {
-            
+            score = scoreNum;
+            scoreText.text = score.ToString();
+
             #region check map
             if (Singleton.Instance.mapNumSelect == 1)
             {
@@ -74,6 +81,7 @@ namespace Script
             if (!startPanel.activeSelf)
             {
                 uiPlayer.SetActive(true);
+                uiTrigger.SetActive(true);
             }
 
             if(isPause)
