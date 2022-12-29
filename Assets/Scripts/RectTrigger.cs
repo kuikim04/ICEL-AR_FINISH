@@ -16,7 +16,7 @@ namespace Script {
         private Camera mCamera = null;
         private RectTransform mRectTranform = null;
         private Image mImage = null;
-
+        public AnswerScripts ans;
         private void Awake()
         {
             MeasureDepth.OnTriggerPoints += OnTriggerPoints;
@@ -45,16 +45,20 @@ namespace Script {
             }
             if (count > mSensitivity)
             {
+                // mIsTriggered = true; ans.Answer();
+
                 if (gameObject.CompareTag("Choice"))
                 {
                     mIsTriggered = true;
-                    gameObject.GetComponent<AnswerScripts>().Answer();
+                    ans.Answer();
                 }
-                if (gameObject.CompareTag("upTime"))
+
+                /*if (gameObject.CompareTag("upTime"))
                 {
                     mIsTriggered = true;
                     upTime.UseItem(time);
-                }
+                }*/
+
                 if (gameObject.CompareTag("PauseUI"))
                 {
 

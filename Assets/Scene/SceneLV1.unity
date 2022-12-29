@@ -4058,6 +4058,7 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
+  ans: {fileID: 1338481590}
 --- !u!114 &1338481589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4103,7 +4104,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1338481590}
-        m_TargetAssemblyTypeName: AnswerScripts, Assembly-CSharp
+        m_TargetAssemblyTypeName: Script.AnswerScripts, Assembly-CSharp
         m_MethodName: Answer
         m_Mode: 1
         m_Arguments:
@@ -4722,6 +4723,7 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
+  ans: {fileID: 1536327684}
 --- !u!114 &1536327683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4766,8 +4768,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338481590}
-        m_TargetAssemblyTypeName: AnswerScripts, Assembly-CSharp
+      - m_Target: {fileID: 1536327684}
+        m_TargetAssemblyTypeName: Script.AnswerScripts, Assembly-CSharp
         m_MethodName: Answer
         m_Mode: 1
         m_Arguments:
@@ -5137,6 +5139,7 @@ MonoBehaviour:
   time: 15
   mSensitivity: 5
   mIsTriggered: 0
+  ans: {fileID: 0}
 --- !u!114 &1789869849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1633986512991154558, guid: cfd616d0a13e03342997e238bdfd4d59, type: 3}
@@ -5297,6 +5300,7 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
+  ans: {fileID: 0}
 --- !u!1 &1851826839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,6 +5530,7 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
+  ans: {fileID: 1868192089}
 --- !u!114 &1868192088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5570,8 +5575,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1338481590}
-        m_TargetAssemblyTypeName: AnswerScripts, Assembly-CSharp
+      - m_Target: {fileID: 1868192089}
+        m_TargetAssemblyTypeName: Script.AnswerScripts, Assembly-CSharp
         m_MethodName: Answer
         m_Mode: 1
         m_Arguments:
