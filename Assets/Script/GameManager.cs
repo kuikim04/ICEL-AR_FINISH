@@ -34,6 +34,8 @@ namespace Script
         {
             score = scoreNum;
             scoreText.text = score.ToString();
+            if (scoreNum <= 0)
+                scoreNum = 0;
 
             #region check map
             if (Singleton.Instance.mapNumSelect == 1)

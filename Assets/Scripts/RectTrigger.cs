@@ -6,6 +6,9 @@ using UnityEngine.UI;
 namespace Script {
     public class RectTrigger : MonoBehaviour
     {
+        [Header("ITEM")]
+        public ItemUptime upTime;
+        public float time;
         [Range(0, 10)]
         public int mSensitivity = 5;
         public bool mIsTriggered = false;
@@ -42,9 +45,22 @@ namespace Script {
             }
             if (count > mSensitivity)
             {
-                mIsTriggered = true;
-                GameManager.scoreNum += 1;
+                if (gameObject.CompareTag("Choice"))
+                {
+                    mIsTriggered = true;
+                    gameObject.GetComponent<AnswerScripts>().Answer();
+                }
+                if (gameObject.CompareTag("upTime"))
+                {
+                    mIsTriggered = true;
+                    upTime.UseItem(time);
+                }
+                if (gameObject.CompareTag("PauseUI"))
+                {
+
+                }
             }
+
         }
     } 
 }

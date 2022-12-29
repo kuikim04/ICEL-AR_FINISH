@@ -95,6 +95,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Script\VolumeSetting.cs" />
     <Compile Include="Assets\Scripts\Kinect\MultiSourceManager.cs" />
+    <Compile Include="Assets\Script\CountDownChoice.cs" />
     <Compile Include="Assets\Script\SaveSelectToggle.cs" />
     <Compile Include="Assets\Script\GainNotice.cs" />
     <Compile Include="Assets\Script\ItemUptime.cs" />
@@ -114,10 +115,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\MeasureDepth.cs" />
+    <Compile Include="Assets\Scripts\RectTrigger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\RectTrigger.cs" />
-    <Compile Include="Assets\Script\CountDownChoice.cs" />
+    <Compile Include="Assets\Scripts\RectTriggerUI.cs" />
+    <Compile Include="Assets\Script\QizeManager.cs" />
+    <Compile Include="Assets\Script\QnA.cs" />
+    <Compile Include="Assets\Script\AnswerScripts.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
