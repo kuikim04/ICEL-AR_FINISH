@@ -27,6 +27,8 @@ namespace Script
             GameManager.isPause = false;
             Singleton.Instance.levelNumSelect = 0;
             Singleton.Instance.readyPlay = false;
+            CountDownTimer.fade1 = true;
+            CountDownTimer.fade2 = false;
         }
     }
 }

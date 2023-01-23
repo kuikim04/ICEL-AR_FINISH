@@ -12,19 +12,25 @@ namespace Script
         public int currentQuestion;
         public GameObject choicePanel;
         public TextMeshProUGUI questionTxt;
+        public static bool isTimeUp;
+
         // Start is called before the first frame update
         void Start()
         {
-            GenerateQuestion();
+            StartCoroutine(GenerateQuestion());
         }
         private void Update()
         {
-            if (choicePanel.activeSelf)
+            if (CountDownTimer.fade2)
             {
-                if (CountDownChoice.curTime <= 0.1f)
+                if (CountDownChoice.curTime <= 0f)
                 {
                     GameManager.scoreNum -= 1;
-                    StartCoroutine(WaitChange());
+                    if (isTimeUp)
+                    {
+                        StartCoroutine(GenerateQuestion());
+                        isTimeUp = false;
+                    }
                     Debug.Log("TimeUp");
                 }
             }
@@ -32,7 +38,7 @@ namespace Script
         public void Corect()
         {
             QnA.RemoveAt(currentQuestion);
-            GenerateQuestion();
+            StartCoroutine(GenerateQuestion());
         }
         void SetAnswer()
         {
@@ -48,17 +54,19 @@ namespace Script
                 }
             }
         }
-        public void GenerateQuestion()
-        {
+        public IEnumerator GenerateQuestion()
+        {           
             currentQuestion = Random.Range(0, QnA.Count);
+            yield return new WaitForSeconds(0.5f);
             questionTxt.text = QnA[currentQuestion].question;
+           // yield return new WaitForSeconds(0.5f);
             SetAnswer();
         }
 
         IEnumerator WaitChange()
         {
             yield return new WaitForSeconds(0.1f);
-            GenerateQuestion();
+            StartCoroutine(GenerateQuestion());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Script {
         // Start is called before the first frame update
         void Start()
         {
-            curTime = startingtime;
+            currentTime = startingtime;
         }
 
         // Update is called once per frame
@@ -20,14 +20,29 @@ namespace Script {
         {
             curTime = currentTime;
 
-            currentTime -= 1 * Time.deltaTime;
-            timeTxt.text = currentTime.ToString("0");
+            if (CountDownTimer.fade2)
+            {
+                currentTime -= 1 * Time.deltaTime;
+                timeTxt.text = currentTime.ToString("0");
 
-            if (currentTime <= 0)
-                currentTime = 10;     
+                if (curTime <= 0)
+                {
+                    currentTime = 0;
+                    GameManager.scoreNum -= 1;
+                    QizeManager.isTimeUp = true;
 
+                    if (QizeManager.isTimeUp)
+                        StartCoroutine(Cd());
+
+                }
+            }
+            
         }
-
+        IEnumerator Cd()
+        {
+            yield return new WaitForSeconds(0.5f);
+            currentTime = 10;
+        }
 
     }
 }

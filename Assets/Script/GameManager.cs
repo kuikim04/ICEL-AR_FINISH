@@ -82,7 +82,11 @@ namespace Script
 
             if (!startPanel.activeSelf)
             {
-                uiPlayer.SetActive(true);
+                uiPlayer.SetActive(true);           
+            }
+
+            if (CountDownTimer.fade2)
+            {
                 uiTrigger.SetActive(true);
             }
 
