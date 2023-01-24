@@ -9,10 +9,12 @@ namespace Script {
         float currentTime = 0f;
         public float startingtime = 10;
         public TMPro.TextMeshProUGUI timeTxt;
+        public GameManager choice;
         // Start is called before the first frame update
         void Start()
         {
             currentTime = startingtime;
+            choice.GetComponent<GameManager>();
         }
 
         // Update is called once per frame
@@ -20,29 +22,34 @@ namespace Script {
         {
             curTime = currentTime;
 
+
             if (CountDownTimer.fade2)
-            {
-                currentTime -= 1 * Time.deltaTime;
-                timeTxt.text = currentTime.ToString("0");
-
-                if (curTime <= 0)
+            {                    
+                if (!QizeManager.isTimeUp)
                 {
-                    currentTime = 0;
-                    GameManager.scoreNum -= 1;
-                    QizeManager.isTimeUp = true;
 
-                    if (QizeManager.isTimeUp)
-                        StartCoroutine(Cd());
-
+                    currentTime -= 1 * Time.deltaTime;
+                    timeTxt.text = currentTime.ToString("0");
+                    
+                    if (curTime <= 0)
+                    {
+                        currentTime = 0;
+                        GameManager.scoreNum -= 1;
+                        QizeManager.isTimeUp = true;
+                        
+                    }
                 }
-            }
-            
-        }
-        IEnumerator Cd()
-        {
-            yield return new WaitForSeconds(0.5f);
-            currentTime = 10;
-        }
+                
+                if (QizeManager.isTimeUp)
+                {
+                    currentTime = 10;
+                }
 
+            }
+
+
+        }
+       
+        
     }
 }

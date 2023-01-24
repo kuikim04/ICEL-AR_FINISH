@@ -15,7 +15,7 @@ namespace Script
         // Start is called before the first frame update
         void Start()
         {
-            timeValue = 10;
+            timeValue = 2;
             fade1 = true;
             fade2 = false;
             Debug.Log(fade1);
@@ -52,9 +52,9 @@ namespace Script
                     fade1 = false;
                     timeToDisplay = 0;
 
-                    if (fade2)
-                        timeValue = 300;
                 }
+                if (fade2)
+                    timeValue = 300;
             }
 
             float minutes = Mathf.FloorToInt(timeToDisplay / 60);

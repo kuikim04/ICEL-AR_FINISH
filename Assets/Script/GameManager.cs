@@ -12,7 +12,9 @@ namespace Script
         public TextMeshProUGUI textNameMap;
         public GameObject uiPlayer;
         public GameObject startPanel;
-        public GameObject uiTrigger;
+        public GameObject[] uiTrigger;
+        public GameObject[] uiTriggerPos;
+
 
         [Header("Game Play")]
         public GameObject dialogue;
@@ -20,18 +22,20 @@ namespace Script
         public TextMeshProUGUI scoreText;
         private int score;
         [HideInInspector] public static int scoreNum;
+        int ranChoice;
         // Start is called before the first frame update
         void Start()
         {
             scoreNum = 0;
-        
+
             startPanel.SetActive(true);
-           // Map[Map.Length].SetActive(false);
+            // Map[Map.Length].SetActive(false);
         }
 
         // Update is called once per frame
         void Update()
         {
+            Debug.Log(ranChoice);
             score = scoreNum;
             scoreText.text = score.ToString();
             if (scoreNum <= 0)
@@ -82,23 +86,114 @@ namespace Script
 
             if (!startPanel.activeSelf)
             {
-                uiPlayer.SetActive(true);           
+                uiPlayer.SetActive(true);
             }
 
             if (CountDownTimer.fade2)
             {
-                uiTrigger.SetActive(true);
+
+                if (ranChoice == 0)
+                {
+                    if (!QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(true);
+                        uiTrigger[1].SetActive(true);
+                        uiTrigger[2].SetActive(true);                      
+
+                        uiTrigger[0].transform.position = uiTriggerPos[0].transform.position;
+                        uiTrigger[1].transform.position = uiTriggerPos[1].transform.position;
+                        uiTrigger[2].transform.position = uiTriggerPos[2].transform.position;
+                    }
+                    else if (QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(false);
+                        uiTrigger[1].SetActive(false);
+                        uiTrigger[2].SetActive(false);                   
+                    }
+
+                }
+                if (ranChoice == 1)
+                {
+                    if (!QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(true);
+                        uiTrigger[1].SetActive(true);
+                        uiTrigger[2].SetActive(true);
+
+                        uiTrigger[0].transform.position = uiTriggerPos[0].transform.position;
+                        uiTrigger[1].transform.position = uiTriggerPos[2].transform.position;
+                        uiTrigger[2].transform.position = uiTriggerPos[1].transform.position;
+                    }
+
+                    else if (QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(false);
+                        uiTrigger[1].SetActive(false);
+                        uiTrigger[2].SetActive(false);
+                    }
+                }
+                if (ranChoice == 2)
+                {
+                    if (!QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(true);
+                        uiTrigger[1].SetActive(true);
+                        uiTrigger[2].SetActive(true);
+
+                        uiTrigger[0].transform.position = uiTriggerPos[2].transform.position;
+                        uiTrigger[1].transform.position = uiTriggerPos[3].transform.position;
+                        uiTrigger[2].transform.position = uiTriggerPos[1].transform.position;
+                    }
+
+                    else if (QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(false);
+                        uiTrigger[1].SetActive(false);
+                        uiTrigger[2].SetActive(false);
+                    }
+                }
+                if (ranChoice == 3)
+                {
+                    if (!QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(true);
+                        uiTrigger[1].SetActive(true);
+                        uiTrigger[2].SetActive(true);
+
+                        uiTrigger[0].transform.position = uiTriggerPos[0].transform.position;
+                        uiTrigger[1].transform.position = uiTriggerPos[3].transform.position;
+                        uiTrigger[2].transform.position = uiTriggerPos[4].transform.position;
+                    }
+
+                    else if (QizeManager.chageChoice)
+                    {
+                        uiTrigger[0].SetActive(false);
+                        uiTrigger[1].SetActive(false);
+                        uiTrigger[2].SetActive(false);
+                    }
+                }
+
+
+
             }
 
-            if(isPause)
+
+
+            if (isPause)
             {
                 Time.timeScale = 0;
-            }else if (!isPause)
+            }
+            else if (!isPause)
             {
                 Time.timeScale = 1;
             }
         }
+
+        public void RandomChoice()
+        {
+            ranChoice = Random.Range(Random.Range(0,4), Random.Range(0,4));
+        }
+
+
     }
-
-
 }
