@@ -10,7 +10,9 @@ namespace Script
     { 
         public string question;
         public string[] answers;
-        public int correctAsnwer;
+        public int correctAsnwer1;
+        public int correctAsnwer2;
+
 
     }
 }

@@ -16,19 +16,25 @@ namespace Script
         public static bool chageChoice;
         public GameManager RandomPosChoice;
 
+
         // Start is called before the first frame update
         void Start()
         {
             StartCoroutine(GenerateQuestion());
             isTimeUp = false;
             chageChoice = false;
+            
         }
         private void Update()
         {
+            if (Singleton.Instance.gameOver)
+                return;        
+                      
+
             if (CountDownTimer.fade2)
             {
                 if (CountDownChoice.curTime <= 0f)
-                {                    
+                {                
                     //GameManager.scoreNum -= 1;
                     if (isTimeUp)
                     {
@@ -37,7 +43,8 @@ namespace Script
                         StartCoroutine(GenerateQuestion());      
                         
                     }
-                }              
+                }
+             
             }
         }
         public void Corect()
@@ -46,29 +53,49 @@ namespace Script
             QnA.RemoveAt(currentQuestion);
             StartCoroutine(GenerateQuestion());
         }
-        void SetAnswer()
-        {         
 
+        public void Wrong()
+        {
+            chageChoice = true;
+            StartCoroutine(GenerateQuestion());
+
+        }
+        void SetAnswer()
+        {
             for (int i = 0; i < option.Length; i++)
             {
                 option[i].GetComponent<AnswerScripts>().isCorrect = false;
                 option[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text
                     = QnA[currentQuestion].answers[i];
 
-                if (QnA[currentQuestion].correctAsnwer == i + 1)
+                if (QnA[currentQuestion].correctAsnwer1 == i + 1)
                 {
                     option[i].GetComponent<AnswerScripts>().isCorrect = true;
                 }
-            }         
+
+                if (QnA[currentQuestion].correctAsnwer2 == i + 1)
+                {
+                    option[i].GetComponent<AnswerScripts>().isCorrect = true;
+                }
+            }
         }
         public IEnumerator GenerateQuestion()
         {
-            RandomPosChoice.RandomChoice();
-            currentQuestion = Random.Range(0, QnA.Count);
-            yield return new WaitForSeconds(3f);
-            chageChoice = false;
-            questionTxt.text = QnA[currentQuestion].question;         
-            SetAnswer();
+            if (QnA.Count > 0)
+            {
+                RandomPosChoice.RandomChoice();
+                currentQuestion = Random.Range(0, QnA.Count);
+                yield return new WaitForSeconds(3f);
+                chageChoice = false;
+
+                questionTxt.text = QnA[currentQuestion].question;
+                SetAnswer();
+            }
+            else
+            {
+                Singleton.Instance.gameOver = true;
+                Debug.Log("Out of Q&A");
+            }
         }
     }
 }

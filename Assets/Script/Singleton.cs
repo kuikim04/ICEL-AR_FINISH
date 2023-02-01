@@ -18,9 +18,14 @@ namespace Script
         public bool isOnEffect { get; set; }
         public bool readyPlay { get; set; }
         public bool gameOver { get; set; }
+       
 
         public bool isLogin;
         public bool isRegister;
+
+        public bool isWarmUp { get; set; }
+        public bool finishWarmup { get; set; }
+
         private void Awake()
         {
             if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
@@ -30,6 +35,7 @@ namespace Script
             {
                 Destroy(gameObject);
             }
+
 
             soundVolume = 1;
             musicVolume = 1;
@@ -41,9 +47,10 @@ namespace Script
             isMute = false;
             isLogin = false;
             isRegister = false; 
-
             isOnEffect = true;
+
         }
+
 
         // Start is called before the first frame update
         void Start()

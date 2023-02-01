@@ -18,11 +18,15 @@ namespace Script
 
         [Header("Game Play")]
         public GameObject dialogue;
+        public GameObject gameOverPanel;
         public static bool isPause;
         public TextMeshProUGUI scoreText;
         private int score;
         [HideInInspector] public static int scoreNum;
         int ranChoice;
+
+        public bool isWalking; //เช็คทำท่าเสร็จหรือยัง
+
         // Start is called before the first frame update
         void Start()
         {
@@ -35,7 +39,19 @@ namespace Script
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(ranChoice);
+
+            #region test
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                isWalking = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                isWalking = false;
+            }
+
+            #endregion
+
             score = scoreNum;
             scoreText.text = score.ToString();
             if (scoreNum <= 0)
@@ -84,31 +100,57 @@ namespace Script
             }
             #endregion
 
-            if (!startPanel.activeSelf)
+            if (startPanel.activeSelf)
             {
-                uiPlayer.SetActive(true);
+                uiTrigger[0].SetActive(false);
+                uiTrigger[1].SetActive(false);
+                uiTrigger[2].SetActive(false);
+                uiTrigger[3].SetActive(false);
+                uiTrigger[4].SetActive(false);
+                return;
             }
+
+            if(!startPanel.activeSelf)
+                uiPlayer.SetActive(true);
+
 
             if (CountDownTimer.fade2)
             {
-
+                if (gameOverPanel.activeSelf)
+                {
+                    uiTrigger[0].SetActive(false);
+                    uiTrigger[1].SetActive(false);
+                    uiTrigger[2].SetActive(false);
+                    uiTrigger[3].SetActive(false);
+                    uiTrigger[4].SetActive(false);
+                    return;
+                }
                 if (ranChoice == 0)
                 {
                     if (!QizeManager.chageChoice)
                     {
+                        if (isWalking)
+                            return;
+
                         uiTrigger[0].SetActive(true);
                         uiTrigger[1].SetActive(true);
-                        uiTrigger[2].SetActive(true);                      
+                        uiTrigger[2].SetActive(true);
+                        uiTrigger[3].SetActive(true);
+                        uiTrigger[4].SetActive(true);
 
                         uiTrigger[0].transform.position = uiTriggerPos[0].transform.position;
                         uiTrigger[1].transform.position = uiTriggerPos[1].transform.position;
                         uiTrigger[2].transform.position = uiTriggerPos[2].transform.position;
+                        uiTrigger[3].transform.position = uiTriggerPos[3].transform.position;
+                        uiTrigger[4].transform.position = uiTriggerPos[4].transform.position;
                     }
                     else if (QizeManager.chageChoice)
                     {
                         uiTrigger[0].SetActive(false);
                         uiTrigger[1].SetActive(false);
-                        uiTrigger[2].SetActive(false);                   
+                        uiTrigger[2].SetActive(false);
+                        uiTrigger[3].SetActive(false);
+                        uiTrigger[4].SetActive(false);
                     }
 
                 }
@@ -116,13 +158,20 @@ namespace Script
                 {
                     if (!QizeManager.chageChoice)
                     {
+                        if (isWalking)
+                            return;
+
                         uiTrigger[0].SetActive(true);
                         uiTrigger[1].SetActive(true);
                         uiTrigger[2].SetActive(true);
+                        uiTrigger[3].SetActive(true);
+                        uiTrigger[4].SetActive(true);
 
                         uiTrigger[0].transform.position = uiTriggerPos[0].transform.position;
                         uiTrigger[1].transform.position = uiTriggerPos[2].transform.position;
-                        uiTrigger[2].transform.position = uiTriggerPos[1].transform.position;
+                        uiTrigger[2].transform.position = uiTriggerPos[3].transform.position;
+                        uiTrigger[3].transform.position = uiTriggerPos[4].transform.position;
+                        uiTrigger[4].transform.position = uiTriggerPos[6].transform.position;
                     }
 
                     else if (QizeManager.chageChoice)
@@ -130,19 +179,28 @@ namespace Script
                         uiTrigger[0].SetActive(false);
                         uiTrigger[1].SetActive(false);
                         uiTrigger[2].SetActive(false);
+                        uiTrigger[3].SetActive(false);
+                        uiTrigger[4].SetActive(false);
                     }
                 }
                 if (ranChoice == 2)
                 {
                     if (!QizeManager.chageChoice)
                     {
+                        if (isWalking)
+                            return;
+
                         uiTrigger[0].SetActive(true);
                         uiTrigger[1].SetActive(true);
                         uiTrigger[2].SetActive(true);
+                        uiTrigger[3].SetActive(true);
+                        uiTrigger[4].SetActive(true);
 
-                        uiTrigger[0].transform.position = uiTriggerPos[2].transform.position;
-                        uiTrigger[1].transform.position = uiTriggerPos[3].transform.position;
-                        uiTrigger[2].transform.position = uiTriggerPos[1].transform.position;
+                        uiTrigger[0].transform.position = uiTriggerPos[1].transform.position;
+                        uiTrigger[1].transform.position = uiTriggerPos[2].transform.position;
+                        uiTrigger[2].transform.position = uiTriggerPos[3].transform.position;
+                        uiTrigger[3].transform.position = uiTriggerPos[5].transform.position;
+                        uiTrigger[4].transform.position = uiTriggerPos[6].transform.position;
                     }
 
                     else if (QizeManager.chageChoice)
@@ -150,19 +208,29 @@ namespace Script
                         uiTrigger[0].SetActive(false);
                         uiTrigger[1].SetActive(false);
                         uiTrigger[2].SetActive(false);
+                        uiTrigger[3].SetActive(false);
+                        uiTrigger[4].SetActive(false);
                     }
                 }
                 if (ranChoice == 3)
                 {
+
                     if (!QizeManager.chageChoice)
                     {
+                        if (isWalking)
+                            return;
+
                         uiTrigger[0].SetActive(true);
                         uiTrigger[1].SetActive(true);
                         uiTrigger[2].SetActive(true);
+                        uiTrigger[3].SetActive(true);
+                        uiTrigger[4].SetActive(true);
 
                         uiTrigger[0].transform.position = uiTriggerPos[0].transform.position;
-                        uiTrigger[1].transform.position = uiTriggerPos[3].transform.position;
-                        uiTrigger[2].transform.position = uiTriggerPos[4].transform.position;
+                        uiTrigger[1].transform.position = uiTriggerPos[1].transform.position;
+                        uiTrigger[2].transform.position = uiTriggerPos[3].transform.position;
+                        uiTrigger[3].transform.position = uiTriggerPos[4].transform.position;
+                        uiTrigger[4].transform.position = uiTriggerPos[6].transform.position;
                     }
 
                     else if (QizeManager.chageChoice)
@@ -170,6 +238,8 @@ namespace Script
                         uiTrigger[0].SetActive(false);
                         uiTrigger[1].SetActive(false);
                         uiTrigger[2].SetActive(false);
+                        uiTrigger[3].SetActive(false);
+                        uiTrigger[4].SetActive(false);
                     }
                 }
 
@@ -187,6 +257,11 @@ namespace Script
             {
                 Time.timeScale = 1;
             }
+
+
+            if (Singleton.Instance.gameOver) { 
+                GameOver();
+            } 
         }
 
         public void RandomChoice()
@@ -195,5 +270,9 @@ namespace Script
         }
 
 
+        public void GameOver()
+        {
+            gameOverPanel.SetActive(true);
+        }
     }
 }

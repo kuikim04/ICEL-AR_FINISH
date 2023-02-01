@@ -27,7 +27,6 @@ namespace Script {
             {                    
                 if (!QizeManager.isTimeUp)
                 {
-
                     currentTime -= 1 * Time.deltaTime;
                     timeTxt.text = currentTime.ToString("0");
                     
@@ -42,14 +41,19 @@ namespace Script {
                 
                 if (QizeManager.isTimeUp)
                 {
-                    currentTime = 10;
+                    ResetTimeChoice();
                 }
-
+            
             }
 
 
         }
-       
-        
+
+        public void ResetTimeChoice()
+        {
+            currentTime = 10;
+
+        }
+
     }
 }

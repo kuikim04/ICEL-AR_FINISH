@@ -17,7 +17,7 @@ namespace Script {
             else
             {
                 Debug.Log("isNotCorrect");
-                qize.Corect();
+                qize.Wrong();
                 //GameManager.scoreNum -= 1;
             }
         }

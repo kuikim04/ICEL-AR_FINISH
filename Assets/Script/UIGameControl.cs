@@ -27,8 +27,18 @@ namespace Script
             GameManager.isPause = false;
             Singleton.Instance.levelNumSelect = 0;
             Singleton.Instance.readyPlay = false;
-            CountDownTimer.fade1 = true;
-            CountDownTimer.fade2 = false;
+            //CountDownTimer.fade1 = true;
+           // CountDownTimer.fade2 = false;
+        }
+
+
+        public void GotitBtn()
+        {
+            SceneManager.LoadScene(0);
+            //GameManager.isPause = false;
+            Singleton.Instance.levelNumSelect = 0;
+            Singleton.Instance.readyPlay = false;
+            Singleton.Instance.gameOver = false;
         }
     }
 }
