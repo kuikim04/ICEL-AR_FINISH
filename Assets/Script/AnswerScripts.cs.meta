@@ -3,7 +3,10 @@ guid: e2c4ee1a49f7a894b9331398dd3b9d2a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - qize: {instanceID: 0}
+  - correctFx: {fileID: 7470428551793318415, guid: 54c992f94a3bdea4faff322a0ca7b6f5, type: 3}
+  - wrongFx: {fileID: 6015291071057644219, guid: 7b528dbbfb000084b80f31bac40dbedb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -12,16 +12,20 @@ namespace Script
         public TextMeshProUGUI textNameMap;
         public GameObject uiPlayer;
         public GameObject startPanel;
+        public GameObject gameoverPanel;
         public GameObject[] uiTrigger;
         public GameObject[] uiTriggerPos;
 
-
         [Header("Game Play")]
         public GameObject dialogue;
+        public GameObject phaseCutInPanel;
         public GameObject gameOverPanel;
         public static bool isPause;
+        bool isExercising;
+
         public TextMeshProUGUI scoreText;
         private int score;
+
         [HideInInspector] public static int scoreNum;
         int ranChoice;
 
@@ -31,7 +35,7 @@ namespace Script
         void Start()
         {
             scoreNum = 0;
-
+            BreakQuiz();
             startPanel.SetActive(true);
             // Map[Map.Length].SetActive(false);
         }
@@ -125,11 +129,12 @@ namespace Script
                     uiTrigger[4].SetActive(false);
                     return;
                 }
+
                 if (ranChoice == 0)
                 {
                     if (!QizeManager.chageChoice)
                     {
-                        if (isWalking)
+                        if (isExercising)
                             return;
 
                         uiTrigger[0].SetActive(true);
@@ -154,11 +159,12 @@ namespace Script
                     }
 
                 }
+
                 if (ranChoice == 1)
                 {
                     if (!QizeManager.chageChoice)
                     {
-                        if (isWalking)
+                        if (isExercising)
                             return;
 
                         uiTrigger[0].SetActive(true);
@@ -183,11 +189,12 @@ namespace Script
                         uiTrigger[4].SetActive(false);
                     }
                 }
+
                 if (ranChoice == 2)
                 {
                     if (!QizeManager.chageChoice)
                     {
-                        if (isWalking)
+                        if (isExercising)
                             return;
 
                         uiTrigger[0].SetActive(true);
@@ -212,12 +219,13 @@ namespace Script
                         uiTrigger[4].SetActive(false);
                     }
                 }
+
                 if (ranChoice == 3)
                 {
 
                     if (!QizeManager.chageChoice)
                     {
-                        if (isWalking)
+                        if (isExercising)
                             return;
 
                         uiTrigger[0].SetActive(true);
@@ -242,12 +250,7 @@ namespace Script
                         uiTrigger[4].SetActive(false);
                     }
                 }
-
-
-
             }
-
-
 
             if (isPause)
             {
@@ -264,6 +267,29 @@ namespace Script
             } 
         }
 
+        public void AddScore(int amount)
+        {
+            scoreNum += amount;
+        }
+
+        public void BreakQuiz()
+        {
+            foreach (var choiceObj in uiTrigger)
+            {
+                choiceObj.SetActive(false);
+                isExercising = true;
+            }
+        }
+
+        public void ResumeQuiz()
+        {
+            foreach (var choiceObj in uiTrigger)
+            {
+                choiceObj.SetActive(true);
+                isExercising = false;
+            }
+        }
+
         public void RandomChoice()
         {
             ranChoice = Random.Range(Random.Range(0,4), Random.Range(0,4));
@@ -273,6 +299,12 @@ namespace Script
         public void GameOver()
         {
             gameOverPanel.SetActive(true);
+        }
+
+        public void ActivatePhaseCutin(string textToDisplay)
+        {
+            phaseCutInPanel.GetComponentInChildren<TextMeshProUGUI>().text = textToDisplay;
+            phaseCutInPanel.SetActive(true);
         }
     }
 }

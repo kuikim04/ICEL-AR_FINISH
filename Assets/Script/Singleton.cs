@@ -24,7 +24,9 @@ namespace Script
         public bool isRegister;
 
         public bool isWarmUp { get; set; }
-        public bool finishWarmup { get; set; }
+        public bool isCoolDown { get; set; }
+
+        public bool hasPlayed { get; set; }
 
         private void Awake()
         {

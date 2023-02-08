@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Script {
     public class CooldownWarmupFate : MonoBehaviour
@@ -40,6 +41,11 @@ namespace Script {
                 ClickButton.gameObject.SetActive(false);
                // Singleton.Instance.finishWarmup = true;
 
+            }
+
+            if (Singleton.Instance.hasPlayed && !Singleton.Instance.isCoolDown)
+            {
+                SceneManager.LoadScene("CoolDown");
             }
         }
 
@@ -78,7 +84,10 @@ namespace Script {
             PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
             ClickButton.interactable = false;
 
+            Singleton.Instance.isWarmUp = false;
+            SceneManager.LoadScene("WarmUp");
         }
+
         private bool Ready()
         {
             ulong diff = ((ulong)DateTime.Now.Ticks - lastTimeClicked);
@@ -98,5 +107,7 @@ namespace Script {
 
             return false;
         }
+
+       
     }
 }

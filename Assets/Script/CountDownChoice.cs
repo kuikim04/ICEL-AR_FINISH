@@ -33,7 +33,7 @@ namespace Script {
                     if (curTime <= 0)
                     {
                         currentTime = 0;
-                        GameManager.scoreNum -= 1;
+                        //GameManager.scoreNum -= 1;
                         QizeManager.isTimeUp = true;
                         
                     }
@@ -49,11 +49,15 @@ namespace Script {
 
         }
 
-        public void ResetTimeChoice()
+        private void OnEnable()
         {
-            currentTime = 10;
-
+            ResetTimeChoice();
         }
 
+        public void ResetTimeChoice()
+        {
+            currentTime = startingtime;
+
+        }
     }
 }

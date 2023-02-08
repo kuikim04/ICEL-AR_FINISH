@@ -29,14 +29,31 @@ namespace Script
         public GameObject selectSceneP1;
         public GameObject selectSceneP2;
 
+        //these should be move somewhere later
+        public bool doWarmAndCool;
+
+        bool warmedUp = false;
+        bool played = false;
+        bool cooledDown = false;
+        //
+
+
         // Start is called before the first frame update
         void Start()
         {
+            Singleton.Instance.gameOver = false;   
+
             if (Singleton.Instance.isLogin)
             {
                 uiSelectLevel.SetActive(true);
                 uiMainMenu.SetActive(true);
             }
+
+            /*if (warmedUp && !cooledDown)
+            {
+                cooledDown = true;
+                SceneManager.LoadScene("CoolDown");
+            }*/
         }
 
         // Update is called once per frame
@@ -77,7 +94,12 @@ namespace Script
         #region Main Menu
         public void PlayGame()
         {
-            uiSelectLevel.SetActive(true);
+                uiSelectLevel.SetActive(true);
+
+            /*{
+                warmedUp = true;
+                SceneManager.LoadScene("WarmUp");
+            }*/
         }
 
         public void Setting()
@@ -167,6 +189,7 @@ namespace Script
         {
             if(Singleton.Instance.levelNumSelect == 1)
             {
+                //played = true;
                 SceneManager.LoadScene("SceneLV1");
             }
 

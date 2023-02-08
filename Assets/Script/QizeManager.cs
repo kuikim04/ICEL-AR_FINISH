@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Script
 {
@@ -9,9 +11,15 @@ namespace Script
     {
         public List<QnA> QnA;
         public GameObject[] option;
+        List<Button> optionBtn;
         public int currentQuestion;
         public TextMeshProUGUI questionTxt;
         public static bool isTimeUp;
+
+        public int answersBeforeChangeToExercise;
+        int answeredCount;
+
+        public UnityEvent OnQuizBreak;
 
         public static bool chageChoice;
         public GameManager RandomPosChoice;
@@ -20,11 +28,13 @@ namespace Script
         // Start is called before the first frame update
         void Start()
         {
+
             StartCoroutine(GenerateQuestion());
             isTimeUp = false;
             chageChoice = false;
             
         }
+
         private void Update()
         {
             if (Singleton.Instance.gameOver)
@@ -47,19 +57,25 @@ namespace Script
              
             }
         }
+
         public void Corect()
         {
-            chageChoice = true;
             QnA.RemoveAt(currentQuestion);
+
+            answeredCount++;
+
             StartCoroutine(GenerateQuestion());
         }
 
         public void Wrong()
         {
-            chageChoice = true;
+
+            answeredCount++;
+
             StartCoroutine(GenerateQuestion());
 
         }
+        
         void SetAnswer()
         {
             for (int i = 0; i < option.Length; i++)
@@ -79,17 +95,31 @@ namespace Script
                 }
             }
         }
+
         public IEnumerator GenerateQuestion()
         {
             if (QnA.Count > 0)
             {
+				yield return new WaitForSeconds(.5f);
+
+                chageChoice = true;
+
                 RandomPosChoice.RandomChoice();
                 currentQuestion = Random.Range(0, QnA.Count);
-                yield return new WaitForSeconds(3f);
+
+                yield return new WaitForSeconds(.5f);
+
                 chageChoice = false;
 
                 questionTxt.text = QnA[currentQuestion].question;
                 SetAnswer();
+
+                if (answeredCount >= answersBeforeChangeToExercise)
+            	{
+                	OnQuizBreak.Invoke();
+                	answeredCount = 0;
+            	}
+            
             }
             else
             {

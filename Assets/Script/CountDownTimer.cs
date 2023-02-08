@@ -71,7 +71,6 @@ namespace Script
                         fade1 = false;
                         fade2 = true;
                         timeToDisplay = 0;
-                        Singleton.Instance.finishWarmup = true;
                     }
                     if (fade2)
                         timeValue = timeFade2;
