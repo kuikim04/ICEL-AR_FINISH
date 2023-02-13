@@ -96,6 +96,8 @@ namespace Script
                 failedLogin.SetActive(true);
                 Debug.Log("Incorrect credentials");
             }
+
+            QuestManager.questManager.LoadQuestList();
         }
         void loadWelcomeScreen()
         {

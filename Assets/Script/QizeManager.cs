@@ -81,6 +81,7 @@ namespace Script
         }
         public IEnumerator GenerateQuestion()
         {
+            
             if (QnA.Count > 0)
             {
                 RandomPosChoice.RandomChoice();

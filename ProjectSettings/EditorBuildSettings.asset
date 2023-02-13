@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scene/Main Menu.unity
     guid: b531da2ab75689f45a0d8be7df38826b
   - enabled: 1
+    path: Assets/Scene/SceneWarmUp.unity
+    guid: 4e82fa009949e4dbfae1249d8c6fb1ed
+  - enabled: 1
     path: Assets/Scene/SceneLV1.unity
     guid: 3a879af065170634eb77bc8853304021
   - enabled: 1

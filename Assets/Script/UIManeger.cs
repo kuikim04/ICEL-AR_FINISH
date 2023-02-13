@@ -29,6 +29,9 @@ namespace Script
         public GameObject selectSceneP1;
         public GameObject selectSceneP2;
 
+        [Header("Quest")]
+        public GameObject[] questBtn;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -42,7 +45,61 @@ namespace Script
         // Update is called once per frame
         void Update()
         {
+            #region Quest
+            //if (!QuestManager.questManager.doneQuestlist.Contains(1))
+            //{
+            //    questBtn[0].SetActive(true);
+            //    questBtn[1].SetActive(false);
+            //    questBtn[2].SetActive(false);
+            //    questBtn[3].SetActive(false);
+            //}
+            //if (!QuestManager.questManager.doneQuestlist.Contains(2)&&
+            //    QuestManager.questManager.doneQuestlist.Contains(1))
+            //{
+            //    questBtn[0].SetActive(false);
+            //    questBtn[1].SetActive(true);
+            //    questBtn[2].SetActive(false);
+            //    questBtn[3].SetActive(false);
+            //    questBtn[4].SetActive(false);
+            //}
+            //if (!QuestManager.questManager.doneQuestlist.Contains(3)
+            //    && QuestManager.questManager.doneQuestlist.Contains(2))
+            //{
+            //    questBtn[0].SetActive(false);
+            //    questBtn[1].SetActive(false);
+            //    questBtn[2].SetActive(true);
+            //    questBtn[3].SetActive(false);
+            //    questBtn[4].SetActive(false);
+            //}
+            //if (!QuestManager.questManager.doneQuestlist.Contains(4)
+            //    && QuestManager.questManager.doneQuestlist.Contains(3))
+            //{
+            //    questBtn[0].SetActive(false);
+            //    questBtn[1].SetActive(false);
+            //    questBtn[2].SetActive(false);
+            //    questBtn[3].SetActive(true);
+            //    questBtn[4].SetActive(false);
+            //}
+            //if (!QuestManager.questManager.doneQuestlist.Contains(5)
+            //    && QuestManager.questManager.doneQuestlist.Contains(4))
+            //{
+            //    questBtn[0].SetActive(false);
+            //    questBtn[1].SetActive(false);
+            //    questBtn[2].SetActive(false);
+            //    questBtn[3].SetActive(false);
+            //    questBtn[4].SetActive(true);
+            //}
 
+            for (int i = 0; i < QuestManager.questManager.doneQuestlist.Count; i++)
+            {
+                if (QuestManager.questManager.doneQuestlist.Contains(i + 1))
+                {
+                    questBtn[i].SetActive(false);
+                }
+                Debug.Log(i);
+            }
+
+            #endregion
 
         }
         public void FirstPage()

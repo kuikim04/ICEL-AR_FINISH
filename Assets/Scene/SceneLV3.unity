@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44671863, g: 0.496575, b: 0.5750147, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -276,9 +276,13 @@ MonoBehaviour:
   textNameMap: {fileID: 1957239060}
   uiPlayer: {fileID: 1340619266}
   startPanel: {fileID: 29552013}
-  uiTrigger: {fileID: 862435957}
+  uiTrigger:
+  - {fileID: 0}
+  uiTriggerPos: []
   dialogue: {fileID: 520632677}
+  gameOverPanel: {fileID: 0}
   scoreText: {fileID: 1466143611}
+  isWalking: 0
 --- !u!4 &62927827
 Transform:
   m_ObjectHideFlags: 0
@@ -324,8 +328,8 @@ MonoBehaviour:
   - {fileID: 1199326645}
   - {fileID: 2035862689}
   currentQuestion: 0
-  choicePanel: {fileID: 862435957}
   questionTxt: {fileID: 1449268928}
+  RandomPosChoice: {fileID: 0}
 --- !u!1 &87533126
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +740,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeValue: 300
   timeTxt: {fileID: 312451478}
+  timeFade1: 0
+  timeFade2: 0
 --- !u!114 &312451478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1802,6 +1808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingtime: 10
   timeTxt: {fileID: 518607050}
+  choice: {fileID: 0}
 --- !u!114 &518607050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2213,6 +2220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingtime: 10
   timeTxt: {fileID: 679913828}
+  choice: {fileID: 0}
 --- !u!114 &679913828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2622,6 +2630,7 @@ GameObject:
   - component: {fileID: 782953351}
   - component: {fileID: 782953350}
   - component: {fileID: 782953349}
+  - component: {fileID: 782953352}
   m_Layer: 5
   m_Name: GotitBtn
   m_TagString: Untagged
@@ -2691,7 +2700,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 782953350}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 782953352}
+        m_TargetAssemblyTypeName: Script.LV3CompleteQuest, Assembly-CSharp
+        m_MethodName: CompleteQuestLV3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &782953350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2730,6 +2751,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782953347}
   m_CullTransparentMesh: 1
+--- !u!114 &782953352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782953347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9dd55b8146040a88481409227192af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &792364690
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,7 +3050,6 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
-  ans: {fileID: 0}
 --- !u!114 &939757254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3168,7 +3200,6 @@ MonoBehaviour:
   time: 15
   mSensitivity: 5
   mIsTriggered: 0
-  ans: {fileID: 0}
 --- !u!114 &953681096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,6 +3569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingtime: 10
   timeTxt: {fileID: 1186298946}
+  choice: {fileID: 0}
 --- !u!114 &1186298946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3837,7 +3869,6 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
-  ans: {fileID: 1199326647}
 --- !u!114 &1199326650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6518,7 +6549,6 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
-  ans: {fileID: 2011552622}
 --- !u!114 &2011552625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6684,7 +6714,6 @@ MonoBehaviour:
   time: 0
   mSensitivity: 5
   mIsTriggered: 0
-  ans: {fileID: 2035862691}
 --- !u!114 &2035862694
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Script {
@@ -78,6 +79,15 @@ namespace Script {
             PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
             ClickButton.interactable = false;
 
+            if (Singleton.Instance.numQuest == 1)
+            {
+                SceneManager.LoadScene("SceneWarmUp");
+            }
+            else
+            {
+                ClickButton.interactable = false;
+
+            }
         }
         private bool Ready()
         {
@@ -91,7 +101,7 @@ namespace Script {
                 ClickButton.interactable = true;
                 Singleton.Instance.isWarmUp = true;
                 ClickButton.gameObject.SetActive(true);
-
+                
                 return true;
             }
 

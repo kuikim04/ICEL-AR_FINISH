@@ -19,7 +19,7 @@ namespace Script
         // Start is called before the first frame update
         void Start()
         {
-            Debug.Log(fade2);
+            fade1 = true;
 
             if(Singleton.Instance.isWarmUp)
                 timeValue = timeFade1;

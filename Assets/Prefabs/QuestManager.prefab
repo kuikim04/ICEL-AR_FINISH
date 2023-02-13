@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7473909234428478350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7473909234428478344}
+  - component: {fileID: 7473909234428478345}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7473909234428478344
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473909234428478350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1064.5, y: 302, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7473909234428478345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473909234428478350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44331a9fc7a304aef81181cc0b7ed803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questsList:
+  - title: Warm Up
+    id: 1
+    progess: 1
+    description: 
+    hint: 
+    congratuation: 
+    summary: 
+    nextQuest: 2
+    questObjective: Warm Up Success
+    questObjectiveCount: 1
+    questObjectiveRequirment: 0
+  - title: Play Level 1 Airport map
+    id: 2
+    progess: 0
+    description: 
+    hint: 
+    congratuation: 
+    summary: 
+    nextQuest: 3
+    questObjective: Play Level1 Airport Success
+    questObjectiveCount: 2
+    questObjectiveRequirment: 0
+  - title: Play Level 1 Technology map
+    id: 3
+    progess: 0
+    description: 
+    hint: 
+    congratuation: 
+    summary: 
+    nextQuest: 4
+    questObjective: Play Level1 Techno Success
+    questObjectiveCount: 3
+    questObjectiveRequirment: 0
+  - title: Play Level 1 Shopping map
+    id: 4
+    progess: 0
+    description: 
+    hint: 
+    congratuation: 
+    summary: 
+    nextQuest: 5
+    questObjective: Play Level1 Shopping Success
+    questObjectiveCount: 4
+    questObjectiveRequirment: 0
+  - title: Warm Up
+    id: 5
+    progess: 0
+    description: 
+    hint: 
+    congratuation: 
+    summary: 
+    nextQuest: 1
+    questObjective: Warm Up Success
+    questObjectiveCount: 5
+    questObjectiveRequirment: 0
+  currentQuestsList: []
