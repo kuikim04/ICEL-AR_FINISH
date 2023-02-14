@@ -96,7 +96,8 @@ namespace Script
                 {
                     questBtn[i].SetActive(false);
                 }
-                Debug.Log(i);
+
+               
             }
 
             #endregion

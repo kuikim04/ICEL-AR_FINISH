@@ -23,8 +23,6 @@ namespace Script {
 
             QuestUI.uiManager.ShowSelectQuest(questID);
 
-            Debug.Log(questID);
-
             if (QuestManager.questManager.RequestAvailableQuest(questID))
             {
                 QuestUI.uiManager.acceptBtn.SetActive(true);

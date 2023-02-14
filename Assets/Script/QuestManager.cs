@@ -62,8 +62,8 @@ namespace Script {
                     {
                         //CompleteQuest(questObject.recivableQuestIDs[j]);
                         QuestUI.uiManager.questRunning = true;
-                        QuestUI.uiManager.activeQuests.Add(questsList[i]);
-
+                        QuestUI.uiManager.activeQuests.Add(currentQuestsList[i]);
+                        Debug.Log(currentQuestsList[i].id);
                     }
                 }
             }

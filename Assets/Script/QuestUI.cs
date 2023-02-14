@@ -143,6 +143,7 @@ namespace Script
 
                 questBtn.transform.SetParent(qBuntonSpacer2, false);
                 qButtons.Add(questBtn);
+
             }
         }
 
@@ -157,7 +158,8 @@ namespace Script
 
                     if (availableQuests[i].progess == Quest.QuestProgess.AVAILABLE)
                     {
-                        txtDesCrips.text = availableQuests[i].title + " " + availableQuests[i].questObjectiveRequirment + " " + "Time";
+                        txtDesCrips.text = availableQuests[i].title + " " +
+                            availableQuests[i].questObjectiveRequirment + " " + "Time";
                     }
                 }
 
@@ -167,10 +169,13 @@ namespace Script
                 if (activeQuests[i].id == questID)
                 {
                     txtDesCrips.text = activeQuests[i].title;
+                    Debug.Log(questID);
 
                     if (activeQuests[i].progess == Quest.QuestProgess.ACCEPTED)
                     {
-                        txtDesCrips.text = activeQuests[i].title + " " +activeQuests[i].questObjectiveCount + "/" + activeQuests[i].questObjectiveRequirment;
+                        txtDesCrips.text = activeQuests[i].title + " " +
+                            activeQuests[i].questObjectiveCount + "/" +
+                            activeQuests[i].questObjectiveRequirment;
 
                     }
                     else if(activeQuests[i].progess == Quest.QuestProgess.COMPLETE)
