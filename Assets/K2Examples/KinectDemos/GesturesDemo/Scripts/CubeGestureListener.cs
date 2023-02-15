@@ -161,7 +161,7 @@ public class CubeGestureListener : MonoBehaviour, KinectGestures.GestureListener
 				progressGestureTime = Time.realtimeSinceStartup;
 			}
 		}
-		else if(gesture == KinectGestures.Gestures.Run && progress > 0.5f)
+		else if(gesture == KinectGestures.Gestures.RunInPlace8Sec && progress > 0.5f)
 		{
 			if(gestureInfo != null)
 			{

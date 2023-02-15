@@ -15,7 +15,7 @@ namespace Script
         public int currentQuestion;
         public TextMeshProUGUI questionTxt;
         public static bool isTimeUp;
-
+        
         public int answersBeforeChangeToExercise;
         int answeredCount;
 

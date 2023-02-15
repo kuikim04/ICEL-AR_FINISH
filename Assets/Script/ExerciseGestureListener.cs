@@ -37,13 +37,15 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
     [SerializeField] TMPro.TextMeshProUGUI exerciseTxt;
     [SerializeField] TMPro.TextMeshProUGUI exerciseCount;
 
-    [SerializeField] GameObject[] exerciseCountOrb;
+
+    [SerializeField] GameObject exerciseCountOrbParent;
 
     [Space]
     [Tooltip("For Debugging")][SerializeField] TextMeshProUGUI progressDebugTxt;
     [SerializeField] UnityEngine.UI.Slider progressDebugBar;
 
     [Header("UI Resources")]
+    [SerializeField] GameObject exerciseOrbPrefab;
     [SerializeField] Sprite exerciseSucceedImage;
     [SerializeField] Sprite exerciseFailedImage;
 
@@ -80,12 +82,22 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
     //
 
-    public void ExerciseCountCheck()
+    public void CallCountCheck()
+    {
+        StartCoroutine(ExerciseCountCheck());
+    }
+
+    public IEnumerator ExerciseCountCheck()
     {
         if (isOnBreak)
-            return;
+            yield break;
 
         count++;
+
+        UpdateExerciseOrb();
+
+        //Delay here
+        yield return new WaitForSecondsRealtime(0.5f);
 
         if (exerciseCount != null)
         {
@@ -151,11 +163,6 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
     {
         if (userIndex != playerIndex)
             return;
-
-        if (progressDebugTxt != null)
-        {
-            progressDebugTxt.text = string.Empty;
-        }
     }
     
     // SetGesture overloads
@@ -186,6 +193,8 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
         exerciseTxt.text = exerciseGoal.exerciseName;
 
+        SetUpExerciseOrb();
+
         exerciseCount.text = count.ToString() + "/" + currentExerciseGoal.exerciseTime.ToString();
     }
 
@@ -197,30 +206,38 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
     //
 
-    void OrbCounterSetUp()
+    void SetUpExerciseOrb()
     {
-        foreach (GameObject Orb in exerciseCountOrb)
+        // Spawn Orb if it doesn't match the exerciseTime
+        if (exerciseCountOrbParent.transform.childCount < currentExerciseGoal.exerciseTime)
         {
-            Orb.SetActive(false);
+            for (int i = exerciseCountOrbParent.transform.childCount ; i < currentExerciseGoal.exerciseTime; i++)
+            {
+                var orb = Instantiate(exerciseOrbPrefab, exerciseCountOrbParent.transform);
+                orb.GetComponentInChildren<TextMeshProUGUI>().text = (i+1).ToString();
+            }
         }
 
-        for (int i = 0; i < currentExerciseGoal.exerciseTime - 1; i++)
+        // Turn off all Fills and unused Orbs
+        for (int i = 0; i < exerciseCountOrbParent.transform.childCount; i++)
         {
-            exerciseCountOrb[i].SetActive(true);
+            if (i+1 > currentExerciseGoal.exerciseTime)
+            {
+                exerciseCountOrbParent.transform.GetChild(i).gameObject.SetActive(false);
+            }
+            else
+            {
+                exerciseCountOrbParent.transform.GetChild(i).gameObject.SetActive(true);
+            }
+
+            exerciseCountOrbParent.transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
         }
+
     }
 
-    void UpdateExerciseCounter()
+    void UpdateExerciseOrb()
     {
-        foreach (GameObject Orb in exerciseCountOrb)
-        {
-            Orb.SetActive(false);
-        }
-
-        for (int i = 0; i < currentExerciseGoal.exerciseTime - 1; i++)
-        {
-            exerciseCountOrb[i].SetActive(true);
-        }
+        exerciseCountOrbParent.transform.GetChild(count - 1).GetChild(0).gameObject.SetActive(true);
     }
 
     //
@@ -235,6 +252,7 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
         if ((gesture == currentGestureGoal) && progress > 0.5f)
         {
+
             if (progressDebugTxt != null)
             {
                 string sGestureText = string.Format("{0}%", progress * 100f);
@@ -254,7 +272,8 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
         if (progressDebugTxt != null)
         {
-            progressDebugTxt.text = String.Empty;
+            progressDebugTxt.text = "canceled";
+            progressDebugBar.value = 0;
         }
 
         //StartCoroutine(displayStatus(exerciseFailedImage, string.Empty, 1f));
@@ -272,13 +291,14 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
             if (progressDebugTxt != null)
             {
-                progressDebugTxt.text = currentGestureGoal + " Completed!";
+                progressDebugBar.value = 0;
+                progressDebugTxt.text = "Completed!";
             }
 
             if (gesture == currentGestureGoal)
             {
                 StartCoroutine(displayStatus(exerciseSucceedImage, string.Empty, 1f));
-                ExerciseCountCheck();
+                StartCoroutine(ExerciseCountCheck());
             }
             else
             {
