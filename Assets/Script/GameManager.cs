@@ -34,6 +34,8 @@ namespace Script
         // Start is called before the first frame update
         void Start()
         {
+            Singleton.Instance.gameOver = false;
+
             scoreNum = 0;
             BreakQuiz();
             startPanel.SetActive(true);
@@ -56,6 +58,7 @@ namespace Script
 
             #endregion
 
+           
             score = scoreNum;
             scoreText.text = score.ToString();
             if (scoreNum <= 0)
@@ -116,8 +119,14 @@ namespace Script
 
             if(!startPanel.activeSelf)
                 uiPlayer.SetActive(true);
-
-
+            if (CountDownTimer.fade1)
+            {
+                uiTrigger[0].SetActive(false);
+                uiTrigger[1].SetActive(false);
+                uiTrigger[2].SetActive(false);
+                uiTrigger[3].SetActive(false);
+                uiTrigger[4].SetActive(false);
+            } 
             if (CountDownTimer.fade2)
             {
                 if (gameOverPanel.activeSelf)

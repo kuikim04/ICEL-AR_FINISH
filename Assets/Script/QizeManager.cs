@@ -98,6 +98,7 @@ namespace Script
 
         public IEnumerator GenerateQuestion()
         {
+            
             if (QnA.Count > 0)
             {
 				yield return new WaitForSeconds(.5f);

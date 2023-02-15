@@ -11,6 +11,7 @@ namespace Script
         public int levelNumSelect { get; set; }
         public int mapNumSelect { get; set; }
         public int numQulity { get; set; }
+        public int numQuest { get; set; }
        
         public float soundVolume { get; set; }
         public float musicVolume { get; set; }
@@ -44,6 +45,7 @@ namespace Script
             mapNumSelect = 0;
             levelNumSelect = 0;
             numQulity = 1;
+            numQuest = 1;
 
             gameOver = false;
             isMute = false;
