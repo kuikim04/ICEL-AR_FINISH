@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44671863, g: 0.496575, b: 0.5750147, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -463,6 +463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   qize: {fileID: 0}
+  correctFx: {fileID: 0}
+  wrongFx: {fileID: 0}
 --- !u!114 &116870977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +630,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   qize: {fileID: 0}
+  correctFx: {fileID: 0}
+  wrongFx: {fileID: 0}
 --- !u!114 &155475408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,7 +1226,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &322183009
 GameObject:
@@ -1832,6 +1836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   qize: {fileID: 0}
+  correctFx: {fileID: 0}
+  wrongFx: {fileID: 0}
 --- !u!114 &432817933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3576,7 +3582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4101,6 +4107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   qize: {fileID: 0}
+  correctFx: {fileID: 0}
+  wrongFx: {fileID: 0}
 --- !u!114 &887038846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4211,6 +4219,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887038843}
   m_CullTransparentMesh: 1
+--- !u!1 &888932078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888932083}
+  - component: {fileID: 888932082}
+  - component: {fileID: 888932081}
+  - component: {fileID: 888932080}
+  - component: {fileID: 888932079}
+  m_Layer: 0
+  m_Name: ExerciseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &888932079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888932078}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a669d15f0035bbf4889c8092b5bcd201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 0
+  leftHandInteraction: 1
+  rightHandInteraction: 1
+  guiHandCursor: {fileID: 0}
+  gripHandTexture: {fileID: 21300000, guid: d12c2b6b77bce004cb08631d13cfed1e, type: 3}
+  releaseHandTexture: {fileID: 21300000, guid: 63f2e194d06a0b54491981df912b673f, type: 3}
+  normalHandTexture: {fileID: 21300000, guid: 63f2e194d06a0b54491981df912b673f, type: 3}
+  handOverlayCursor: 1
+  smoothFactor: 10
+  allowHandClicks: 1
+  allowPushToClick: 1
+  controlMouseCursor: 0
+  controlMouseDrag: 0
+  interactionListeners: []
+  debugText: {fileID: 0}
+--- !u!114 &888932080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888932078}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ae617a72f263e42b4e84fb12a02aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 0
+  foregroundCamera: {fileID: 0}
+  depthImage: {fileID: 0}
+--- !u!114 &888932081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888932078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c5832264d4548429d5e2827ab79d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &888932082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888932078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e256ea6c2a03b4e429d3709c17c46c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 0
+  exerciseSet: {fileID: 11400000, guid: 58f39c352c779bf41b64c69553aad8ab, type: 2}
+  onExerciseComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  onBreak:
+    m_PersistentCalls:
+      m_Calls: []
+  onSetComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Script.GameManager, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  exerciseStatusImage: {fileID: 0}
+  exerciseTxt: {fileID: 0}
+  exerciseCount: {fileID: 0}
+  exerciseCountOrbParent: {fileID: 0}
+  progressDebugTxt: {fileID: 0}
+  progressDebugBar: {fileID: 0}
+  exerciseOrbPrefab: {fileID: 0}
+  exerciseSucceedImage: {fileID: 21300000, guid: 595f13d5619b62844b7d981aba60d029, type: 3}
+  exerciseFailedImage: {fileID: 21300000, guid: e3fd49a76f3624248b8b7d6400a40936, type: 3}
+--- !u!4 &888932083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888932078}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 876.04205, y: 487.33755, z: -327.78412}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &909133016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4546,6 +4686,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   qize: {fileID: 0}
+  correctFx: {fileID: 0}
+  wrongFx: {fileID: 0}
 --- !u!114 &1011977103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5806,7 +5948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1363728050
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6407,7 +6549,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPlayer: {fileID: 1363728049}
   startPanel: {fileID: 810028894}
-  textNameMap: {fileID: 1533970865}
   gameOverPanel: {fileID: 1963666951}
 --- !u!114 &1485289119
 MonoBehaviour:
@@ -6446,6 +6587,7 @@ MonoBehaviour:
   textNameMap: {fileID: 1533970865}
   uiPlayer: {fileID: 1363728049}
   startPanel: {fileID: 810028894}
+  gameoverPanel: {fileID: 0}
   uiTrigger:
   - {fileID: 222783419}
   - {fileID: 370960696}
@@ -6462,6 +6604,7 @@ MonoBehaviour:
   - {fileID: 604054885}
   - {fileID: 397619775}
   dialogue: {fileID: 0}
+  phaseCutInPanel: {fileID: 0}
   gameOverPanel: {fileID: 1963666951}
   scoreText: {fileID: 486211790}
   isWalking: 0

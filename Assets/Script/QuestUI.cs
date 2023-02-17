@@ -53,14 +53,14 @@ namespace Script
         void Start()
         {
             acceptBtn = GameObject.Find("UIManger").
-                transform.FindChild("QuestPanel").
-                transform.FindChild("AcceptBtn").gameObject;
+                transform.Find("QuestPanel").
+                transform.Find("AcceptBtn").gameObject;
 
             acceptBtnScript = acceptBtn.GetComponent<QButtonUI>();
 
             completeBtn = GameObject.Find("UIManger").
-                transform.FindChild("QuestPanel").
-                transform.FindChild("CompleteBtn").gameObject;
+                transform.Find("QuestPanel").
+                transform.Find("CompleteBtn").gameObject;
 
             completeBtnScript = completeBtn.GetComponent<QButtonUI>();
 

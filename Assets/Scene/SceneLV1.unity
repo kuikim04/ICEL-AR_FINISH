@@ -1576,7 +1576,7 @@ MonoBehaviour:
   exerciseCountOrbParent: {fileID: 1598512795}
   progressDebugTxt: {fileID: 234007594}
   progressDebugBar: {fileID: 1496246890}
-  exerciseOrbPrefab: {fileID: 6570064341179192267, guid: f602080117e583c48a17d8e27ba845be, type: 3}
+  exerciseOrbPrefab: {fileID: 8140057702260639215, guid: 4a736bb55ffb30345a8b53b0f8aa51e7, type: 3}
   exerciseSucceedImage: {fileID: 21300000, guid: 595f13d5619b62844b7d981aba60d029, type: 3}
   exerciseFailedImage: {fileID: 21300000, guid: e3fd49a76f3624248b8b7d6400a40936, type: 3}
 --- !u!114 &132045722
@@ -5796,7 +5796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9865a24404ffb4eb3b7c0ecb03f5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 0
+  timeValue: 180
   timeTxt: {fileID: 930246739}
   timeFade1: 5
   timeFade2: 5

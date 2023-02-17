@@ -81,7 +81,7 @@ namespace Script {
 
             if (Singleton.Instance.numQuest == 1)
             {
-                SceneManager.LoadScene("SceneWarmUp");
+                SceneManager.LoadScene("WarmUp");
             }
             else
             {
@@ -89,6 +89,7 @@ namespace Script {
 
             }
         }
+
         private bool Ready()
         {
             ulong diff = ((ulong)DateTime.Now.Ticks - lastTimeClicked);

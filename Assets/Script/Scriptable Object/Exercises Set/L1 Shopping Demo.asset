@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebace5e507fa6547ae0329a050cdfd0, type: 3}
+  m_Name: L1 Shopping Demo
+  m_EditorClassIdentifier: 
+  Exercises:
+  - exerciseName: "\u0E40\u0E14\u0E34\u0E19\u0E44\u0E1B\u0E14\u0E49\u0E32\u0E19\u0E0B\u0E49\u0E32\u0E22"
+    exerciseGesture: 33
+    exerciseTime: 1
+    restAfterFinish: 0
+  - exerciseName: "\u0E22\u0E49\u0E33\u0E40\u0E17\u0E49\u0E32\u0E22\u0E01\u0E40\u0E02\u0E48\u0E32\u0E2A\u0E39\u0E07"
+    exerciseGesture: 26
+    exerciseTime: 2
+    restAfterFinish: 1
+  - exerciseName: "\u0E40\u0E14\u0E34\u0E19\u0E44\u0E1B\u0E14\u0E49\u0E32\u0E19\u0E02\u0E27\u0E32"
+    exerciseGesture: 34
+    exerciseTime: 1
+    restAfterFinish: 0
+  - exerciseName: "\u0E22\u0E49\u0E33\u0E40\u0E17\u0E49\u0E32\u0E22\u0E01\u0E40\u0E02\u0E48\u0E32\u0E2A\u0E39\u0E07"
+    exerciseGesture: 26
+    exerciseTime: 1
+    restAfterFinish: 1

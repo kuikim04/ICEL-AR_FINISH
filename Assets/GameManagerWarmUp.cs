@@ -8,7 +8,6 @@ namespace Script {
         [Header("Start Game Interaction")]
         public GameObject uiPlayer;
         public GameObject startPanel;
-        public TextMeshProUGUI textNameMap;
 
         public GameObject gameOverPanel;
         public static bool isPause;

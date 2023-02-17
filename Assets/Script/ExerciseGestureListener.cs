@@ -60,6 +60,11 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
     //
 
+    public void SetExerciseSet(ExerciseSet set)
+    {
+        exerciseSet = set;
+    }
+
     public void ChooseExerciseInOrder(List<ExerciseGoal> exercises)
     {
         print("choosing exercise");

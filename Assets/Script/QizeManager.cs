@@ -112,7 +112,7 @@ namespace Script
 
                 chageChoice = false;
 
-                questionTxt.text = QnA[currentQuestion].question;
+                //questionTxt.text = QnA[currentQuestion].question;
                 SetAnswer();
 
                 if (answeredCount >= answersBeforeChangeToExercise)
