@@ -33,6 +33,7 @@ namespace Script
         public QButtonUI acceptBtnScript;
         public QButtonUI completeBtnScript;
 
+        public bool isCompleteAllQuest;
  
 
         private void Awake()
@@ -64,24 +65,41 @@ namespace Script
 
             completeBtnScript = completeBtn.GetComponent<QButtonUI>();
 
+
+            txtDesCrips.text = "CLICK FOR ACCEPT QUEST";
             acceptBtn.SetActive(false);
             completeBtn.SetActive(false);
         }
-  
+
+        private void Update()
+        {
+            if (Singleton.Instance.numQuest >= 5)
+            {
+                CompleteAllQuest();
+            }                                             
+        }
+
+        void CompleteAllQuest()
+        {
+            isCompleteAllQuest = true;
+            txtDesCrips.text = "COMPELTE ALL DIALY QUEST";
+
+        }
 
         public void CheckQuests(QuestObject questObject)
         {
+           
             currentQuestObject = questObject;
             QuestManager.questManager.QuestRequest(questObject);
 
-            if(questRunning || questAvailable)
+            if(questRunning || questAvailable && !isCompleteAllQuest)
             {               
                 ShowQuestPanel();
             } 
         }
 
         public void ShowQuestPanel()
-        {
+        {           
             FillQuestBtn();
         }
 
@@ -100,7 +118,7 @@ namespace Script
         public void HideQuest()
         {
 
-            txtDesCrips.text = "";
+            //txtDesCrips.text = "CLICK FOR CHECK QUEST";
 
             questAvailable = false;
             questRunning = false;
@@ -117,8 +135,7 @@ namespace Script
         }
 
         void FillQuestBtn()
-        {
-
+        { 
             foreach (Quest availableQuest in availableQuests)
             {
                 GameObject questBtn = Instantiate(qButton);
@@ -149,7 +166,10 @@ namespace Script
 
         public void ShowSelectQuest(int questID)
         {
+            //if (isCompleteAllQuest)         
+            //    return;
             
+
             for (int i = 0; i < availableQuests.Count; i++)
             {
                 if (availableQuests[i].id == questID)
@@ -159,7 +179,8 @@ namespace Script
                     if (availableQuests[i].progess == Quest.QuestProgess.AVAILABLE)
                     {
                         txtDesCrips.text = availableQuests[i].title + " " +
-                            availableQuests[i].questObjectiveRequirment + " " + "Time";
+                            availableQuests[i].questObjectiveCount + "/" +
+                            availableQuests[i].questObjectiveRequirment; ;
                     }
                 }
 
@@ -169,7 +190,6 @@ namespace Script
                 if (activeQuests[i].id == questID)
                 {
                     txtDesCrips.text = activeQuests[i].title;
-                    Debug.Log(questID);
 
                     if (activeQuests[i].progess == Quest.QuestProgess.ACCEPTED)
                     {
@@ -180,7 +200,9 @@ namespace Script
                     }
                     else if(activeQuests[i].progess == Quest.QuestProgess.COMPLETE)
                     {
-                        txtDesCrips.text = activeQuests[i].congratuation;
+                        txtDesCrips.text = activeQuests[i].title + " " +
+                           activeQuests[i].questObjectiveCount + " " + "/" +
+                           activeQuests[i].questObjectiveRequirment;
 
                     }
                 }
