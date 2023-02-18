@@ -49,54 +49,70 @@ MonoBehaviour:
     progess: 1
     description: 
     hint: 
-    congratuation: 
-    summary: 
+    congratuation: DONE ! NEXT QUEST IS ALREADY
     nextQuest: 2
     questObjective: Warm Up Success
-    questObjectiveCount: 1
-    questObjectiveRequirment: 0
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
   - title: Play Level 1 Airport map
     id: 2
-    progess: 0
+    progess: 1
     description: 
     hint: 
-    congratuation: 
-    summary: 
+    congratuation: CLICK FOR NEXT QUEST
     nextQuest: 3
     questObjective: Play Level1 Airport Success
-    questObjectiveCount: 2
-    questObjectiveRequirment: 0
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
   - title: Play Level 1 Technology map
     id: 3
-    progess: 0
+    progess: 1
     description: 
     hint: 
-    congratuation: 
-    summary: 
+    congratuation: CLICK FOR NEXT QUEST
     nextQuest: 4
-    questObjective: Play Level1 Techno Success
-    questObjectiveCount: 3
-    questObjectiveRequirment: 0
+    questObjective: Play Level1 Technology Success
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
   - title: Play Level 1 Shopping map
     id: 4
-    progess: 0
+    progess: 1
     description: 
     hint: 
-    congratuation: 
-    summary: 
+    congratuation: 'YOUR QUEST ALREADY DONE '
     nextQuest: 5
     questObjective: Play Level1 Shopping Success
-    questObjectiveCount: 4
-    questObjectiveRequirment: 0
-  - title: Warm Up
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
+  - title: Cool Down
     id: 5
-    progess: 0
+    progess: 1
     description: 
     hint: 
     congratuation: 
-    summary: 
-    nextQuest: 1
+    nextQuest: 6
+    questObjective: CoolDown Success
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
+  - title: Warm Up
+    id: 6
+    progess: 1
+    description: 
+    hint: 
+    congratuation: 
+    nextQuest: 7
     questObjective: Warm Up Success
     questObjectiveCount: 5
-    questObjectiveRequirment: 0
+    questObjectiveRequirment: 1
+  - title: Play Level 1 Food/Dining
+    id: 7
+    progess: 1
+    description: 
+    hint: 
+    congratuation: 
+    nextQuest: 8
+    questObjective: Warm Up Success
+    questObjectiveCount: 5
+    questObjectiveRequirment: 1
   currentQuestsList: []
+  doneQuestlist: 

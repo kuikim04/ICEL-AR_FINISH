@@ -26,7 +26,5 @@ namespace Script {
         public string questObjective;
         public int questObjectiveCount;
         public int questObjectiveRequirment;
-
-
     }
 }

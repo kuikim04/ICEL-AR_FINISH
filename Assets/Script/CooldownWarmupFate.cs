@@ -79,7 +79,7 @@ namespace Script {
             PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
             ClickButton.interactable = false;
 
-            if (Singleton.Instance.numQuest == 1)
+            if (Singleton.Instance.curQuest == 1)
             {
                 SceneManager.LoadScene("SceneWarmUp");
             }

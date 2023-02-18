@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44671863, g: 0.496575, b: 0.5750147, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3798,6 +3798,15 @@ MonoBehaviour:
   - {fileID: 1395323846}
   - {fileID: 532925769}
   - {fileID: 2117083405}
+  qizeLvScenes:
+  - {fileID: 11400000, guid: 7ea851cb94784ea449e88110b469d2ef, type: 2}
+  - {fileID: 11400000, guid: 11b5c3c1edb15de4ca58463cf872b576, type: 2}
+  - {fileID: 11400000, guid: ea2b850ad949ab840a72d9f62bc27e99, type: 2}
+  - {fileID: 11400000, guid: 85ae6c328e176d942ab6fc44bbe2a01c, type: 2}
+  - {fileID: 11400000, guid: 7a50d04b651ddf64c8981e4ad53659f9, type: 2}
+  - {fileID: 11400000, guid: 1c6121bc11b886e4c9cf2357a97d0795, type: 2}
+  - {fileID: 11400000, guid: d65e242a7fd41084396a1bd0e8107e6d, type: 2}
+  - {fileID: 11400000, guid: fab75ab94572dac4ebc66ed023d68366, type: 2}
   currentQuestion: 0
   questionTxt: {fileID: 131846427}
   RandomPosChoice: {fileID: 787347677}
