@@ -73,7 +73,7 @@ namespace Script
 
         private void Update()
         {
-            if (Singleton.Instance.numQuest >= 5)
+            if (Singleton.Instance.curQuest >= 5)
             {
                 CompleteAllQuest();
             }                                             
@@ -165,10 +165,7 @@ namespace Script
         }
 
         public void ShowSelectQuest(int questID)
-        {
-            //if (isCompleteAllQuest)         
-            //    return;
-            
+        {             
 
             for (int i = 0; i < availableQuests.Count; i++)
             {

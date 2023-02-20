@@ -28,11 +28,6 @@ namespace Script {
             {
                 lastTimeClicked = ulong.Parse(PlayerPrefs.GetString("LastTimeClicked"));
             }
-            else
-            {
-                lastTimeClicked = (ulong)DateTime.Now.Ticks;
-                PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
-            }
 
             if (!Ready())
             {
@@ -75,13 +70,13 @@ namespace Script {
 
         public void Click()
         {
-            //lastTimeClicked = (ulong)DateTime.Now.Ticks;
-            //PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
-            //ClickButton.interactable = false;
+            lastTimeClicked = (ulong)DateTime.Now.Ticks;
+            PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
+            ClickButton.interactable = false;
 
-            if (Singleton.Instance.numQuest == 1)
+            if (Singleton.Instance.curQuest == 1)
             {
-                SceneManager.LoadScene("WarmUp");
+                SceneManager.LoadScene("SceneWarmUp");
             }
             else
             {
@@ -89,7 +84,6 @@ namespace Script {
 
             }
         }
-
         private bool Ready()
         {
             ulong diff = ((ulong)DateTime.Now.Ticks - lastTimeClicked);
@@ -109,13 +103,5 @@ namespace Script {
 
             return false;
         }
-
-        public void StartCoolDown()
-        {
-            if (Singleton.Instance.numQuest == 5)
-            {
-                SceneManager.LoadScene("Cooldown");
-            }
-        }    
     }
 }

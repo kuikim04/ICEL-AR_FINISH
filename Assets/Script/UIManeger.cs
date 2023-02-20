@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +31,10 @@ namespace Script
 
         [Header("Quest")]
         public GameObject[] questBtn;
+        public GameObject inputDayPanel;
+        public TMP_InputField inputDay;
+        public GameObject dayFalse;
+        int day;
 
         // Start is called before the first frame update
         void Start()
@@ -41,6 +45,7 @@ namespace Script
             {
                 uiSelectLevel.SetActive(true);
                 uiMainMenu.SetActive(true);
+                inputDayPanel.SetActive(true);
             }
 
             /*if (warmedUp && !cooledDown)
@@ -53,50 +58,12 @@ namespace Script
         // Update is called once per frame
         void Update()
         {
-            #region Quest
-            //if (!QuestManager.questManager.doneQuestlist.Contains(1))
-            //{
-            //    questBtn[0].SetActive(true);
-            //    questBtn[1].SetActive(false);
-            //    questBtn[2].SetActive(false);
-            //    questBtn[3].SetActive(false);
-            //}
-            //if (!QuestManager.questManager.doneQuestlist.Contains(2)&&
-            //    QuestManager.questManager.doneQuestlist.Contains(1))
-            //{
-            //    questBtn[0].SetActive(false);
-            //    questBtn[1].SetActive(true);
-            //    questBtn[2].SetActive(false);
-            //    questBtn[3].SetActive(false);
-            //    questBtn[4].SetActive(false);
-            //}
-            //if (!QuestManager.questManager.doneQuestlist.Contains(3)
-            //    && QuestManager.questManager.doneQuestlist.Contains(2))
-            //{
-            //    questBtn[0].SetActive(false);
-            //    questBtn[1].SetActive(false);
-            //    questBtn[2].SetActive(true);
-            //    questBtn[3].SetActive(false);
-            //    questBtn[4].SetActive(false);
-            //}
-            //if (!QuestManager.questManager.doneQuestlist.Contains(4)
-            //    && QuestManager.questManager.doneQuestlist.Contains(3))
-            //{
-            //    questBtn[0].SetActive(false);
-            //    questBtn[1].SetActive(false);
-            //    questBtn[2].SetActive(false);
-            //    questBtn[3].SetActive(true);
-            //    questBtn[4].SetActive(false);
-            //}
-            //if (!QuestManager.questManager.doneQuestlist.Contains(5)
-            //    && QuestManager.questManager.doneQuestlist.Contains(4))
-            //{
-            //    questBtn[0].SetActive(false);
-            //    questBtn[1].SetActive(false);
-            //    questBtn[2].SetActive(false);
-            //    questBtn[3].SetActive(false);
-            //    questBtn[4].SetActive(true);
-            //}
+            #region Quest        
+            
+
+            if (Singleton.Instance.isInputDay)
+                inputDayPanel.SetActive(false);
+
 
             for (int i = 0; i < QuestManager.questManager.doneQuestlist.Count; i++)
             {
@@ -141,6 +108,24 @@ namespace Script
         #endregion
 
         #region Main Menu
+
+        public void InputDay()
+        {
+            if (Singleton.Instance.isInputDay)
+                return;
+
+            day = int.Parse(inputDay.text);
+            if(day > 12)
+            {
+                dayFalse.SetActive(true);
+                return;
+            }
+            Singleton.Instance.isInputDay = true;
+            Singleton.Instance.numQuest = day;
+            inputDayPanel.SetActive(false);
+
+
+        }
         public void PlayGame()
         {
                 uiSelectLevel.SetActive(true);

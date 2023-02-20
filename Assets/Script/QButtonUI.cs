@@ -58,31 +58,7 @@ namespace Script {
         public void CompleteQuest()
         {
             QuestManager.questManager.CompleteQuest(questID);
-
-            #region Check Quest
-
-            if (Singleton.Instance.numQuest == 1)
-            {
-                Singleton.Instance.numQuest = 2;
-            }
-
-            else if (Singleton.Instance.numQuest == 2)
-            {
-                Singleton.Instance.numQuest = 3;
-            }
-
-            else if (Singleton.Instance.numQuest == 3)
-            {
-                Singleton.Instance.numQuest = 4;
-            }
-
-            else if (Singleton.Instance.numQuest == 4)
-            {
-                Singleton.Instance.numQuest = 5;
-            }
-
-            #endregion
-
+            Singleton.Instance.curQuest += 1;        
             QuestUI.uiManager.HideQuest();
 
         }

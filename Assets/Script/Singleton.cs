@@ -12,6 +12,7 @@ namespace Script
         public int mapNumSelect { get; set; }
         public int numQulity { get; set; }
         public int numQuest { get; set; }
+        public int curQuest { get; set; }
        
         public float soundVolume { get; set; }
         public float musicVolume { get; set; }
@@ -23,6 +24,7 @@ namespace Script
 
         public bool isLogin;
         public bool isRegister;
+        public bool isInputDay { get; set; }
 
         public bool isWarmUp { get; set; }
         public bool isCoolDown { get; set; }
@@ -45,13 +47,15 @@ namespace Script
             mapNumSelect = 0;
             levelNumSelect = 0;
             numQulity = 1;
-            numQuest = 1;
+            numQuest = 0;
+            curQuest = 1;
 
             gameOver = false;
             isMute = false;
             isLogin = false;
             isRegister = false; 
             isOnEffect = true;
+            isInputDay = false;
 
         }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace Script {
 
         public List<int> doneQuestlist = new List<int>();
         private int SaveListCount;
-
+        public QuestDatScriptable[] questDaylist;
 
         private void Awake()
         {
@@ -29,9 +30,76 @@ namespace Script {
 
             DontDestroyOnLoad(gameObject);
         }
-        private void Start()
+        private void Update()
         {
+
+            #region CheckQuestDay
+
+            //day 1
+            if (Singleton.Instance.numQuest == 1)
+            {
+                questsList = new List<Quest>(questDaylist[0].quests);
+            }
+            //day 2
+            else if(Singleton.Instance.numQuest == 2)
+            {
+                questsList = new List<Quest>(questDaylist[1].quests);
+            }
+            //day 3
+            else if (Singleton.Instance.numQuest == 3)
+            {
+                questsList = new List<Quest>(questDaylist[2].quests);
+            }
+            //day 4
+            else if (Singleton.Instance.numQuest == 4)
+            {
+                questsList = new List<Quest>(questDaylist[3].quests);
+            }
+            //day 5
+            else if (Singleton.Instance.numQuest == 5)
+            {
+                questsList = new List<Quest>(questDaylist[4].quests);
+            }
+            //day 6
+            else if (Singleton.Instance.numQuest == 6)
+            {
+                questsList = new List<Quest>(questDaylist[5].quests);
+            }
+            //day 7
+            else if (Singleton.Instance.numQuest == 7)
+            {
+                questsList = new List<Quest>(questDaylist[6].quests);
+            }
+            //day 8
+            else if (Singleton.Instance.numQuest == 8)
+            {
+                questsList = new List<Quest>(questDaylist[7].quests);
+            }
+            //day 9
+            else if (Singleton.Instance.numQuest == 9)
+            {
+                questsList = new List<Quest>(questDaylist[8].quests);
+            }
+            //day 10
+            else if (Singleton.Instance.numQuest == 10)
+            {
+                questsList = new List<Quest>(questDaylist[9].quests);
+            }
+            //day 11
+            else if (Singleton.Instance.numQuest == 11)
+            {
+                questsList = new List<Quest>(questDaylist[10].quests);
+            }
+            //day 12
+            else if (Singleton.Instance.numQuest == 12)
+            {
+                questsList = new List<Quest>(questDaylist[11].quests);
+            }
+
+
+            #endregion
         }
+
 
         public void QuestRequest(QuestObject questObject)
         {
@@ -39,11 +107,13 @@ namespace Script {
             {
                 for(int i = 0; i < questsList.Count; i++)
                 {
+                    
                     for(int j = 0; j < questObject.availableQuestIDs.Count; j++)
                     {
                         if(questsList[i].id == questObject.availableQuestIDs[j]
                             && questsList[i].progess == Quest.QuestProgess.AVAILABLE)
                         {
+                           
                             //AcceptQuest(questObject.availableQuestIDs[j]);
                             QuestUI.uiManager.questAvailable = true;
                             QuestUI.uiManager.availableQuests.Add(questsList[i]);

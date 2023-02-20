@@ -11,7 +11,7 @@ namespace Script
     {
         public List<QnA> QnA;
         public GameObject[] option;
-        List<Button> optionBtn;
+        public QizeLvScene[] qizeLvScenes;
         public int currentQuestion;
         public TextMeshProUGUI questionTxt;
         public static bool isTimeUp;
@@ -23,7 +23,6 @@ namespace Script
 
         public static bool chageChoice;
         public GameManager RandomPosChoice;
-
 
         // Start is called before the first frame update
         void Start()
@@ -78,6 +77,50 @@ namespace Script
         
         void SetAnswer()
         {
+            #region CheckQuizMap
+
+            if (Singleton.Instance.mapNumSelect == 1)
+            {
+                QnA = new List<QnA>(qizeLvScenes[0].QnA);
+            }
+
+            if (Singleton.Instance.mapNumSelect == 2)
+            {
+                QnA = new List<QnA>(qizeLvScenes[1].QnA);
+            }
+
+            if (Singleton.Instance.mapNumSelect == 3)
+            {
+                QnA = new List<QnA>(qizeLvScenes[2].QnA);
+            }
+
+            if (Singleton.Instance.mapNumSelect == 4)
+            {
+                QnA = new List<QnA>(qizeLvScenes[3].QnA);
+            }
+
+            if (Singleton.Instance.mapNumSelect == 5)
+            {
+                QnA = new List<QnA>(qizeLvScenes[4].QnA);
+            }
+
+            if (Singleton.Instance.mapNumSelect == 6)
+            {
+                QnA = new List<QnA>(qizeLvScenes[5].QnA);
+            }
+
+            if (Singleton.Instance.mapNumSelect == 7)
+            {
+                QnA = new List<QnA>(qizeLvScenes[6].QnA);
+            }
+
+            if (Singleton.Instance.mapNumSelect == 8)
+            {
+                QnA = new List<QnA>(qizeLvScenes[7].QnA);
+            }
+
+            #endregion
+
             for (int i = 0; i < option.Length; i++)
             {
                 option[i].GetComponent<AnswerScripts>().isCorrect = false;
@@ -97,7 +140,7 @@ namespace Script
         }
 
         public IEnumerator GenerateQuestion()
-        {
+        {        
             
             if (QnA.Count > 0)
             {
