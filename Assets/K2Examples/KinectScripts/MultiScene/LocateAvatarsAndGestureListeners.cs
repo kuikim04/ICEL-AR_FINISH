@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LocateAvatarsAndGestureListeners : MonoBehaviour 
 {
@@ -7,7 +8,7 @@ public class LocateAvatarsAndGestureListeners : MonoBehaviour
 	void Start () 
 	{
 		KinectManager kinectManager = KinectManager.Instance;
-		
+
 		if(kinectManager)
 		{
 			// remove all users, filters and avatar controllers
@@ -65,5 +66,4 @@ public class LocateAvatarsAndGestureListeners : MonoBehaviour
 
 		}
 	}
-	
 }

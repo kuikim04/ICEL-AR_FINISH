@@ -1377,8 +1377,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0E22\u0E37\u0E14\u0E40\u0E2B\u0E22\u0E35\u0E22\u0E14\u0E2B\u0E31\u0E27\u0E44\u0E2B\u0E25\u0E48"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c726a1d044f9964e9ff6743fc9bc68f, type: 2}
-  m_sharedMaterial: {fileID: -1686654773202591064, guid: 5c726a1d044f9964e9ff6743fc9bc68f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e0af071958e21a45a564b15f2e9b536, type: 2}
+  m_sharedMaterial: {fileID: 113567111852880114, guid: 7e0af071958e21a45a564b15f2e9b536, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132045718}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79ae617a72f263e42b4e84fb12a02aa0, type: 3}
   m_Name: 
@@ -1557,19 +1557,7 @@ MonoBehaviour:
         m_CallState: 2
   onSetComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 787347677}
-        m_TargetAssemblyTypeName: Script.GameManager, Assembly-CSharp
-        m_MethodName: GameOver
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   exerciseStatusImage: {fileID: 1758188543}
   exerciseTxt: {fileID: 131846427}
   exerciseCount: {fileID: 1736876487}
@@ -1834,7 +1822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &234007593
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1876,8 +1864,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 000%
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5c726a1d044f9964e9ff6743fc9bc68f, type: 2}
-  m_sharedMaterial: {fileID: -1686654773202591064, guid: 5c726a1d044f9964e9ff6743fc9bc68f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7e0af071958e21a45a564b15f2e9b536, type: 2}
+  m_sharedMaterial: {fileID: 113567111852880114, guid: 7e0af071958e21a45a564b15f2e9b536, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5799,7 +5787,7 @@ MonoBehaviour:
   timeValue: 180
   timeTxt: {fileID: 930246739}
   timeFade1: 5
-  timeFade2: 5
+  timeFade2: 60
 --- !u!1 &965511522
 GameObject:
   m_ObjectHideFlags: 0

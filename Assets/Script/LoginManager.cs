@@ -97,8 +97,10 @@ namespace Script
                 Debug.Log("Incorrect credentials");
             }
 
-            QuestManager.questManager.LoadQuestList();
+            // Disabled for DEMO
+            //QuestManager.questManager.LoadQuestList();
         }
+
         void loadWelcomeScreen()
         {
             Singleton.Instance.isLogin = true;

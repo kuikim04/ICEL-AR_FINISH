@@ -76,6 +76,11 @@ namespace Script {
                 Singleton.Instance.numQuest = 4;
             }
 
+            else if (Singleton.Instance.numQuest == 4)
+            {
+                Singleton.Instance.numQuest = 5;
+            }
+
             #endregion
 
             QuestUI.uiManager.HideQuest();

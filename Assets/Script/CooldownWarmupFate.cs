@@ -75,9 +75,9 @@ namespace Script {
 
         public void Click()
         {
-            lastTimeClicked = (ulong)DateTime.Now.Ticks;
-            PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
-            ClickButton.interactable = false;
+            //lastTimeClicked = (ulong)DateTime.Now.Ticks;
+            //PlayerPrefs.SetString("LastTimeClicked", lastTimeClicked.ToString());
+            //ClickButton.interactable = false;
 
             if (Singleton.Instance.numQuest == 1)
             {
@@ -109,5 +109,13 @@ namespace Script {
 
             return false;
         }
+
+        public void StartCoolDown()
+        {
+            if (Singleton.Instance.numQuest == 5)
+            {
+                SceneManager.LoadScene("Cooldown");
+            }
+        }    
     }
 }

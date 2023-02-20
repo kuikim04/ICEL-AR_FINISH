@@ -258,6 +258,5 @@ namespace Script {
                 doneQuestlist.Add(quests);
             }
         }
-
     }
 }

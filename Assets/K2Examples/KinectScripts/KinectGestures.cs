@@ -1778,7 +1778,7 @@ public class KinectGestures : MonoBehaviour, GestureManagerInterface
 
 					print("exerciseTime :  " + exerciseTimer);
 
-					float legDelay = .85f;
+					float legDelay = 1f;
 
 					gestureData.progress = exerciseTimer / 8f;
 

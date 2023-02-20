@@ -23,6 +23,8 @@ namespace Script
         public static bool isPause;
         bool isExercising;
 
+        public static int totalExerciseCount = 0;
+
         public TextMeshProUGUI scoreText;
         private int score;
 

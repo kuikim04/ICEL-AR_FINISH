@@ -29,6 +29,7 @@ namespace Script
             float second = Mathf.FloorToInt(CountDownTimer.curtime % 60);
 
             timeToUse.text = string.Format("{0:00} : {1:00}", minutes, second);
+            numEx.text = GameManager.totalExerciseCount.ToString();
             numPoint.text = GameManager.scoreNum.ToString();
             //numEx.text =
 

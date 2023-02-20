@@ -15,9 +15,5 @@ MonoBehaviour:
   Exercises:
   - exerciseName: Squat
     exerciseGesture: 15
-    exerciseTime: 2
+    exerciseTime: 4
     restAfterFinish: 1
-  - exerciseName: Walk Forward, Knee Up
-    exerciseGesture: 28
-    exerciseTime: 2
-    restAfterFinish: 0

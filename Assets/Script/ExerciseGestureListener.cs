@@ -53,7 +53,7 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
     private void Start()
     {
-
+        GameManager.totalExerciseCount = 0;
 
         ChooseExerciseInOrder(exerciseSet.Exercises);
     }
@@ -76,7 +76,7 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
             KinectManager manager = KinectManager.Instance;
 
             index = 0;
-            Singleton.Instance.gameOver = true;
+            //Singleton.Instance.gameOver = true;
         }
 
         bool breakAfterLastOne = exercises[index].restAfterFinish;
@@ -304,6 +304,7 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
             {
                 StartCoroutine(displayStatus(exerciseSucceedImage, string.Empty, 1f));
                 StartCoroutine(ExerciseCountCheck());
+                GameManager.totalExerciseCount += 1;
             }
             else
             {

@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Script {
     public class warmupQuest : MonoBehaviour
     {
-        
         public void CompleteQuestWarmUp()
         {
             QuestManager.questManager.AddQuestItem("Warm Up Success", 1);            
