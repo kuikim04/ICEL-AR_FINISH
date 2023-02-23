@@ -32,7 +32,7 @@ namespace Script {
         }
         private void Update()
         {
-
+            PlayerPrefs.DeleteAll();
             #region CheckQuestDay
 
             //day 1
@@ -179,6 +179,10 @@ namespace Script {
                 {
                     currentQuestsList[i].progess = Quest.QuestProgess.DONE;
                     doneQuestlist.Add(currentQuestsList[i].id);
+
+                    SavePlayerDetail.savePlayerDetail.AddQuiz("Quest Day: " + "" + Singleton.Instance.numQuest + "\n" + 
+                        currentQuestsList[i].title + "Progess: " + currentQuestsList[i].progess);
+
                     currentQuestsList.Remove(currentQuestsList[i]);
                     SavelistDone();
                     

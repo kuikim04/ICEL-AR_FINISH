@@ -17,6 +17,7 @@ namespace Script
         public static bool chageChoice;
         public GameManager RandomPosChoice;
 
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -49,6 +50,8 @@ namespace Script
         }
         public void Corect()
         {
+           // SavePlayerDetail.savePlayerDetail.AddQuiz(QnA[currentQuestion].question);
+
             chageChoice = true;
             QnA.RemoveAt(currentQuestion);
             StartCoroutine(GenerateQuestion());
@@ -56,6 +59,8 @@ namespace Script
 
         public void Wrong()
         {
+           // SavePlayerDetail.savePlayerDetail.AddQuiz(QnA[currentQuestion].question);
+
             chageChoice = true;
             StartCoroutine(GenerateQuestion());
 

@@ -20,7 +20,7 @@ namespace Script
         public GameObject loginSuccess;
         public GameObject failedLogin;
 
-        ArrayList credentials;
+        public ArrayList credentials;
         ArrayList LoginHistory;
 
 
@@ -76,6 +76,8 @@ namespace Script
                     i.ToString().Substring(i.ToString().IndexOf(":") + 1).Equals(passwordInput.text))
                 {
                     isExists = true;
+                    SavePlayerDetail.savePlayerDetail.nameFile = usernameInput.text;
+                    Debug.Log(SavePlayerDetail.savePlayerDetail.nameFile);
                     break;
                 }
             }
@@ -85,7 +87,7 @@ namespace Script
 
                 Debug.Log($"Logging in '{usernameInput.text}'");
 
-                LoginHistory.Add("Username: " + usernameInput.text + " Password: " + passwordInput.text + " is Login");
+                LoginHistory.Add("Username: " + usernameInput.text + " Password: " + passwordInput.text + " is Login" + System.DateTime.Now);
                 File.WriteAllLines(Application.dataPath + "/LoginHistory.txt", (String[])LoginHistory.ToArray(typeof(string)));
 
 

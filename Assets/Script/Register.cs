@@ -22,6 +22,7 @@ namespace Script
 
         ArrayList credentials;
         ArrayList credentialsDetail;
+        public ArrayList playerDetail;
 
 
         // Start is called before the first frame update
@@ -49,6 +50,9 @@ namespace Script
             {
                 File.WriteAllText(Application.dataPath + "/credentialsDetail.txt", "");
             }
+
+
+
             #endregion
         }
         private void Update()
@@ -96,6 +100,7 @@ namespace Script
                 StartCoroutine(RegisterSuccess());
                 credentials.Add(usernameInput.text + ":" + passwordInput.text);
                 File.WriteAllLines(Application.dataPath + "/credentials.txt", (String[])credentials.ToArray(typeof(string)));
+                SavePlayerDetail.savePlayerDetail.CreateFile(usernameInput.text);
 
                 #region  เก็บแยกไอดีพาสเวิด อีเมลล์ และวันเกิด เพื่อไม่ให้การค้นหาไอดีล้อกอินสับสน
 
@@ -116,6 +121,7 @@ namespace Script
      
 
         }
+       
 
         IEnumerator RegisterSuccess()
         {
