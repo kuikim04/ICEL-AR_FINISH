@@ -76,8 +76,9 @@ namespace Script
                     i.ToString().Substring(i.ToString().IndexOf(":") + 1).Equals(passwordInput.text))
                 {
                     isExists = true;
+
                     SavePlayerDetail.savePlayerDetail.nameFile = usernameInput.text;
-                    Debug.Log(SavePlayerDetail.savePlayerDetail.nameFile);
+
                     break;
                 }
             }

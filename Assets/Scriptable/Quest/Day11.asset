@@ -13,53 +13,53 @@ MonoBehaviour:
   m_Name: Day11
   m_EditorClassIdentifier: 
   quests:
-  - title: 
-    id: 0
+  - title: Warm Up
+    id: 1
     progess: 1
     description: 
     hint: 
-    congratuation: 
-    nextQuest: 0
+    congratuation: DONE! NEXT QUEST  IS ALREADY
+    nextQuest: 2
+    questObjective: Warm Up Success
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
+  - title: 
+    id: 2
+    progess: 0
+    description: 
+    hint: 
+    congratuation: DONE! NEXT QUEST  IS ALREADY
+    nextQuest: 3
     questObjective: 
     questObjectiveCount: 0
-    questObjectiveRequirment: 0
+    questObjectiveRequirment: 1
   - title: 
-    id: 0
+    id: 3
+    progess: 0
+    description: 
+    hint: 
+    congratuation: DONE! NEXT QUEST  IS ALREADY
+    nextQuest: 4
+    questObjective: 
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
+  - title: 
+    id: 4
+    progess: 0
+    description: 
+    hint: 
+    congratuation: DONE! NEXT QUEST  IS ALREADY
+    nextQuest: 5
+    questObjective: 
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
+  - title: 'Play Cool Down '
+    id: 5
     progess: 0
     description: 
     hint: 
     congratuation: 
     nextQuest: 0
-    questObjective: 
+    questObjective: Cool Down Success
     questObjectiveCount: 0
-    questObjectiveRequirment: 0
-  - title: 
-    id: 0
-    progess: 0
-    description: 
-    hint: 
-    congratuation: 
-    nextQuest: 0
-    questObjective: 
-    questObjectiveCount: 0
-    questObjectiveRequirment: 0
-  - title: 
-    id: 0
-    progess: 0
-    description: 
-    hint: 
-    congratuation: 
-    nextQuest: 0
-    questObjective: 
-    questObjectiveCount: 0
-    questObjectiveRequirment: 0
-  - title: 
-    id: 0
-    progess: 0
-    description: 
-    hint: 
-    congratuation: 
-    nextQuest: 0
-    questObjective: 
-    questObjectiveCount: 0
-    questObjectiveRequirment: 0
+    questObjectiveRequirment: 1

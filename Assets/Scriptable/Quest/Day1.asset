@@ -13,53 +13,63 @@ MonoBehaviour:
   m_Name: Day1
   m_EditorClassIdentifier: 
   quests:
-  - title: 
+  - title: Warm Up
     id: 1
     progess: 1
     description: 
     hint: 
-    congratuation: 
+    congratuation: DONE! NEXT QUEST  IS ALREADY
     nextQuest: 2
     questObjective: Warm Up Success
-    questObjectiveCount: 1
-    questObjectiveRequirment: 1
-  - title: 
-    id: 0
-    progess: 0
-    description: 
-    hint: 
-    congratuation: 
-    nextQuest: 0
-    questObjective: 
     questObjectiveCount: 0
     questObjectiveRequirment: 1
-  - title: 
-    id: 0
+  - title: 'Play Level1 Airport '
+    id: 2
     progess: 0
     description: 
     hint: 
-    congratuation: 
-    nextQuest: 0
-    questObjective: 
+    congratuation: DONE! NEXT QUEST  IS ALREADY
+    nextQuest: 3
+    questObjective: Play Level1 Airport Success
     questObjectiveCount: 0
     questObjectiveRequirment: 1
-  - title: 
-    id: 0
+  - title: Play Level1 Technology
+    id: 3
     progess: 0
     description: 
     hint: 
-    congratuation: 
-    nextQuest: 0
-    questObjective: 
+    congratuation: DONE! NEXT QUEST  IS ALREADY
+    nextQuest: 4
+    questObjective: Play Level1 Technology Success
     questObjectiveCount: 0
     questObjectiveRequirment: 1
-  - title: 
-    id: 0
+  - title: Play Level1 Shopping
+    id: 4
+    progess: 0
+    description: 
+    hint: 
+    congratuation: DONE! NEXT QUEST  IS ALREADY
+    nextQuest: 5
+    questObjective: Play Level1 Shopping Success
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
+  - title: Play Level1 Holiday
+    id: 5
+    progess: 0
+    description: 
+    hint: 
+    congratuation: 
+    nextQuest: 6
+    questObjective: Play Level1 Holiday Success
+    questObjectiveCount: 0
+    questObjectiveRequirment: 1
+  - title: 'Play Cool Down '
+    id: 6
     progess: 0
     description: 
     hint: 
     congratuation: 
     nextQuest: 0
-    questObjective: 
+    questObjective: Cool Down Success
     questObjectiveCount: 0
     questObjectiveRequirment: 1

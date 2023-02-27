@@ -1,0 +1,7 @@
+﻿Quest Day:1
+Quest ID:1 Warm Up Progress:AVAILABLE
+Quest ID:2 Play Level1 Airport  Progress:AVAILABLE
+Quest ID:3 Play Level1 Technology Progress:ACCEPTED
+Quest ID:4 Play Level1 Shopping Progress:AVAILABLE
+Quest ID:5 Play Level1 Holiday Progress:NOT_AVAILABLE
+Quest ID:6 Play Cool Down  Progress:NOT_AVAILABLE

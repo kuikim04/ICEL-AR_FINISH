@@ -36,19 +36,46 @@ namespace Script
                 File.WriteAllText(Application.dataPath + "/" + nameFile + ".txt", "");
             }
         }
+        /*
+                public void AddQuiz(string Quiz)
+                {
+                    string path = Application.dataPath + "/" + nameFile +".txt";
 
-        public void AddQuiz(string Quiz)
-        {
-            string path = Application.dataPath + "/" + nameFile +".txt";
+                    if (!File.Exists(path))
+                    {
+                        File.WriteAllText(path, "Quest Day:" + Singleton.Instance.numQuest);;
+                    }
+                    string content = "\n" + Quiz;
 
-            if (!File.Exists(path))
-            {
-                File.WriteAllText(path, "");
-            }
-            string content = Quiz;
+                    File.AppendAllText(path, content);
 
-            File.AppendAllText(path, content);
-            
-        }
+                }*/
+
+        /* public string ConvertDataToString(List<string> data)
+         {
+             string dataString = "";
+             for (int i = 0; i < data.Count; i++)
+             {
+                 dataString += data[i].ToString();
+                 if (i < data.Count - 1)
+                 {
+                     dataString += "\n";
+                 }
+             }
+             return dataString;
+         }*/
+
+        /*  public void SaveDataToFile(List<string> data)
+          {
+              string filePath = Application.dataPath + "/"+ nameFile +".txt";
+              string dataString = ConvertDataToString(data);
+              using (StreamWriter writer = new StreamWriter(filePath))
+              {
+                  writer.Write(dataString);
+              }
+          }*/
+
+
+        
     }
 }
