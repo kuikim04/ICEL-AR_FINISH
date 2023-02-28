@@ -9,15 +9,12 @@ EditorBuildSettings:
     path: Assets/Scene/Main Menu.unity
     guid: b531da2ab75689f45a0d8be7df38826b
   - enabled: 1
-    path: Assets/Scene/SceneWarmUp.unity
-    guid: 4e82fa009949e4dbfae1249d8c6fb1ed
+    path: Assets/Scene/WarmUp.unity
+    guid: e0d14ed3b2cf8a54d8343a5a3b657fbb
   - enabled: 1
     path: Assets/Scene/SceneLV1.unity
-    guid: 3a879af065170634eb77bc8853304021
+    guid: 036ad134e125cdb45b78a2f6753759fa
   - enabled: 1
-    path: Assets/Scene/SceneLV2.unity
-    guid: 4eaa54b9d15bc2b41bd09629978f2f40
-  - enabled: 1
-    path: Assets/Scene/SceneLV3.unity
-    guid: 604dfad64414e6b40b4430560e91f9ef
+    path: Assets/Scene/CoolDown.unity
+    guid: 6e933a731f4b8974099e858dd2664cae
   m_configObjects: {}
