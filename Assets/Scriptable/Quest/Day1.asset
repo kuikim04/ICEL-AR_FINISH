@@ -13,53 +13,53 @@ MonoBehaviour:
   m_Name: Day1
   m_EditorClassIdentifier: 
   quests:
-  - title: 
+  - title: Warm Up
     id: 1
-    progess: 1
+    progess: 4
     description: 
     hint: 
-    congratuation: 
+    congratuation: Warm Up Done!
     nextQuest: 2
     questObjective: Warm Up Success
     questObjectiveCount: 1
     questObjectiveRequirment: 1
-  - title: 
-    id: 0
-    progess: 0
+  - title: Play Level 1 in Airport Scene.
+    id: 2
+    progess: 1
     description: 
     hint: 
     congratuation: 
-    nextQuest: 0
-    questObjective: 
+    nextQuest: 3
+    questObjective: Play Level1 Airport Success
     questObjectiveCount: 0
     questObjectiveRequirment: 1
-  - title: 
-    id: 0
+  - title: Play Level 1 in Technology Scene.
+    id: 3
     progess: 0
     description: 
     hint: 
     congratuation: 
-    nextQuest: 0
-    questObjective: 
+    nextQuest: 4
+    questObjective: Play Level1 Technology Success
     questObjectiveCount: 0
     questObjectiveRequirment: 1
-  - title: 
-    id: 0
+  - title: Play Level 1 in Shopping Scene.
+    id: 4
     progess: 0
     description: 
     hint: 
     congratuation: 
-    nextQuest: 0
-    questObjective: 
+    nextQuest: 5
+    questObjective: Play Level1 Shopping Success
     questObjectiveCount: 0
     questObjectiveRequirment: 1
-  - title: 
-    id: 0
+  - title: Cool Down
+    id: 5
     progess: 0
-    description: 
+    description: Press "Button button" to start Cool down
     hint: 
     congratuation: 
     nextQuest: 0
-    questObjective: 
+    questObjective: Cool Down Success
     questObjectiveCount: 0
     questObjectiveRequirment: 1

@@ -200,7 +200,8 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
 
         SetUpExerciseOrb();
 
-        exerciseCount.text = count.ToString() + "/" + currentExerciseGoal.exerciseTime.ToString();
+        if (exerciseCount != null)
+            exerciseCount.text = count.ToString() + "/" + currentExerciseGoal.exerciseTime.ToString();
     }
 
     public void ClearGesture()
@@ -255,7 +256,7 @@ public class ExerciseGestureListener : MonoBehaviour, KinectGestures.GestureList
         if (userIndex != playerIndex)
             return;
 
-        if ((gesture == currentGestureGoal) && progress > 0.5f)
+        if (gesture == currentGestureGoal)
         {
 
             if (progressDebugTxt != null)

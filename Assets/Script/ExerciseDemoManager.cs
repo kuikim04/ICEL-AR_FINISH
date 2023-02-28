@@ -18,7 +18,7 @@ namespace Script
         {
             var ActiveSceneName = SceneManager.GetActiveScene().name;
 
-            if (ActiveSceneName != "WarmUp")
+            if (ActiveSceneName != "WarmUp" && ActiveSceneName != "CoolDown")
             {
                 KinectManager kinectManager = KinectManager.Instance;
                 ExerciseGestureListener listeners = FindObjectOfType(typeof(ExerciseGestureListener)) as ExerciseGestureListener;

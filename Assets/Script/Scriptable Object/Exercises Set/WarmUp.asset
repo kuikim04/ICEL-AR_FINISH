@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WarmUp
   m_EditorClassIdentifier: 
   Exercises:
-  - exerciseName: "\u0E22\u0E37\u0E19\u0E01\u0E32\u0E07\u0E41\u0E02\u0E19"
+  - exerciseName: "\u0E22\u0E37\u0E49\u0E19\u0E01\u0E32\u0E07\u0E41\u0E02\u0E19"
     exerciseGesture: 4
     exerciseTime: 1
     restAfterFinish: 0

@@ -76,7 +76,7 @@ namespace Script {
 
             if (Singleton.Instance.curQuest == 1)
             {
-                SceneManager.LoadScene("SceneWarmUp");
+                SceneManager.LoadScene("WarmUp");
             }
             else
             {
@@ -84,6 +84,15 @@ namespace Script {
 
             }
         }
+
+        public void StartCoolDown()
+        {
+            if (Singleton.Instance.curQuest == 5)
+            {
+                SceneManager.LoadScene("CoolDown");
+            }
+        }
+
         private bool Ready()
         {
             ulong diff = ((ulong)DateTime.Now.Ticks - lastTimeClicked);

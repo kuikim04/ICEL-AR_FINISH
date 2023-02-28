@@ -1859,7 +1859,7 @@ public class KinectGestures : MonoBehaviour, GestureManagerInterface
 
 			case Gestures.WalkForwardKneeup:
                 {
-					float minFootDistance = .5f;
+					float minFootDistance = .25f;
 					float minFootHight = 0.1f;
 
 					switch (gestureData.state)
@@ -1870,11 +1870,12 @@ public class KinectGestures : MonoBehaviour, GestureManagerInterface
 							   ((jointsPos[rightAnkleIndex].z - jointsPos[leftAnkleIndex].z) > minFootDistance &&
 							   (jointsPos[rightAnkleIndex].y - jointsPos[leftAnkleIndex].y) < minFootHight))
 							{
-								SetGestureJoint(ref gestureData, timestamp, leftKneeIndex, jointsPos[leftKneeIndex]);
+
 								gestureData.progress += 0.125f;
 
 								gestureData.state = 1;
 								counter++;
+
 								if (counter >= 4)
 								{
 									counter = 0;
@@ -1890,7 +1891,7 @@ public class KinectGestures : MonoBehaviour, GestureManagerInterface
 							   ((jointsPos[leftAnkleIndex].z - jointsPos[rightAnkleIndex].z) > minFootDistance &&
 							   (jointsPos[leftAnkleIndex].y - jointsPos[rightAnkleIndex].y) < minFootHight))
 							{
-								SetGestureJoint(ref gestureData, timestamp, leftKneeIndex, jointsPos[leftKneeIndex]);
+
 								gestureData.progress += 0.125f;
 
 								gestureData.state = 0;

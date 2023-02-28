@@ -73,7 +73,7 @@ namespace Script
 
         private void Update()
         {
-            if (Singleton.Instance.curQuest >= 5)
+            if (Singleton.Instance.curQuest > 5)
             {
                 CompleteAllQuest();
             }                                             

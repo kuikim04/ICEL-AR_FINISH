@@ -1294,7 +1294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &128169236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1464,7 +1464,6 @@ GameObject:
   - component: {fileID: 132045721}
   - component: {fileID: 132045719}
   - component: {fileID: 132045720}
-  - component: {fileID: 132045722}
   m_Layer: 0
   m_Name: ExerciseManager
   m_TagString: Untagged
@@ -1512,7 +1511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  exerciseSet: {fileID: 11400000, guid: 722e234ce007e1b4f90856650ce57334, type: 2}
+  exerciseSet: {fileID: 11400000, guid: 58f39c352c779bf41b64c69553aad8ab, type: 2}
   onExerciseComplete:
     m_PersistentCalls:
       m_Calls:
@@ -1567,33 +1566,6 @@ MonoBehaviour:
   exerciseOrbPrefab: {fileID: 8140057702260639215, guid: 4a736bb55ffb30345a8b53b0f8aa51e7, type: 3}
   exerciseSucceedImage: {fileID: 21300000, guid: 595f13d5619b62844b7d981aba60d029, type: 3}
   exerciseFailedImage: {fileID: 21300000, guid: e3fd49a76f3624248b8b7d6400a40936, type: 3}
---- !u!114 &132045722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132045718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a669d15f0035bbf4889c8092b5bcd201, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerIndex: 0
-  leftHandInteraction: 1
-  rightHandInteraction: 1
-  guiHandCursor: {fileID: 1109439103}
-  gripHandTexture: {fileID: 21300000, guid: d12c2b6b77bce004cb08631d13cfed1e, type: 3}
-  releaseHandTexture: {fileID: 21300000, guid: 63f2e194d06a0b54491981df912b673f, type: 3}
-  normalHandTexture: {fileID: 21300000, guid: 63f2e194d06a0b54491981df912b673f, type: 3}
-  handOverlayCursor: 1
-  smoothFactor: 10
-  allowHandClicks: 1
-  allowPushToClick: 1
-  controlMouseCursor: 0
-  controlMouseDrag: 0
-  interactionListeners: []
-  debugText: {fileID: 0}
 --- !u!4 &132045723
 Transform:
   m_ObjectHideFlags: 0
@@ -1606,7 +1578,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &133572801 stripped
 GameObject:
@@ -3241,6 +3213,7 @@ GameObject:
   - component: {fileID: 525425079}
   - component: {fileID: 525425078}
   - component: {fileID: 525425081}
+  - component: {fileID: 525425082}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3294,7 +3267,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &525425081
 MonoBehaviour:
@@ -3311,8 +3284,35 @@ MonoBehaviour:
   playerIndex: 0
   leftHandInteraction: 1
   rightHandInteraction: 1
-  processCursorMovement: 0
+  processCursorMovement: 1
   m_ForceModuleActive: 0
+--- !u!114 &525425082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525425077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a669d15f0035bbf4889c8092b5bcd201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: 0
+  leftHandInteraction: 1
+  rightHandInteraction: 1
+  guiHandCursor: {fileID: 1109439103}
+  gripHandTexture: {fileID: 21300000, guid: d12c2b6b77bce004cb08631d13cfed1e, type: 3}
+  releaseHandTexture: {fileID: 21300000, guid: 63f2e194d06a0b54491981df912b673f, type: 3}
+  normalHandTexture: {fileID: 21300000, guid: 63f2e194d06a0b54491981df912b673f, type: 3}
+  handOverlayCursor: 1
+  smoothFactor: 10
+  allowHandClicks: 1
+  allowPushToClick: 1
+  controlMouseCursor: 0
+  controlMouseDrag: 0
+  interactionListeners: []
+  debugText: {fileID: 0}
 --- !u!1 &532925769
 GameObject:
   m_ObjectHideFlags: 0
@@ -9163,7 +9163,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9369,7 +9369,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
